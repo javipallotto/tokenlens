@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
 "app_name": "TokenLens",
 "version": "0.9.0",
@@ -30,4 +31,38 @@
 "size_bytes": 0
 }
 ]
+=======
+{
+"app_name": "TokenLens",
+"version": "0.9.0",
+"released_utc": "2025-08-24T00:00:00Z",
+"notes": "Primer release público de prueba.",
+"min_version_required": "0.9.0",
+"builds": [
+{
+"platform": "windows",
+"arch": "x64",
+"filename": "TokenLens-0.9.0-Setup.exe",
+"url": "https://cdn.tu-dominio.com/TokenLens-0.9.0-Setup.exe",
+"sha256": "REEMPLAZAR_CON_HASH",
+"size_bytes": 0
+},
+{
+"platform": "macos",
+"arch": "arm64",
+"filename": "TokenLens-0.9.0-arm64.dmg",
+"url": "https://cdn.tu-dominio.com/TokenLens-0.9.0-arm64.dmg",
+"sha256": "REEMPLAZAR_CON_HASH",
+"size_bytes": 0
+},
+{
+"platform": "linux",
+"arch": "x64",
+"filename": "TokenLens-0.9.0.AppImage",
+"url": "https://cdn.tu-dominio.com/TokenLens-0.9.0.AppImage",
+"sha256": "REEMPLAZAR_CON_HASH",
+"size_bytes": 0
+}
+]
+>>>>>>> 455a3573a8ce6acd49ef239dd49a9828723f6991
 }

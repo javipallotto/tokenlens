@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="es">
 <head>
@@ -470,3 +471,477 @@
   </script>
 </body>
 </html>
+=======
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="meta.title">TokenVision – Gracias</title>
+  <meta name="description" content="Gracias por tu compra. Te enviamos la licencia de TokenVision por email.">
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- Header/Footer (mismo diseño que el resto del sitio) -->
+  <style>
+    /* ===== Header ===== */
+    .site-nav{ background:rgba(255,255,255,.02); border-bottom:1px solid #1f2a44; }
+    .nav-wrap{ display:flex; align-items:center; justify-content:space-between; padding:12px 0; gap:16px; }
+    .site-brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); font-weight:700; }
+    .site-brand img{ width:24px; height:24px; }
+
+    .site-links{ display:flex; gap:18px; align-items:center; }
+    .site-links a{ color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:10px; border:1px solid transparent; background:transparent; }
+    .site-links a:hover{ color:#fff; border-color:#233251; background:#0f131a; }
+    .site-links a.active, .site-links a[aria-current="page"]{ color:var(--text); border-color:#2a3a5c; background:#0f131a; position:relative; }
+    .site-links a.active::after{ content:""; position:absolute; left:10px; right:10px; bottom:-7px; height:2px; background:linear-gradient(90deg,var(--primary),var(--accent)); border-radius:2px; }
+
+    .nav-cta{ display:flex; align-items:center; gap:12px; }
+    .btn{ display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid #24324d; color:var(--text); text-decoration:none; background:#151922; }
+    .btn:hover{ border-color:#2b3a5f; }
+    .btn.primary{ background:linear-gradient(135deg,var(--primary),var(--accent)); border:0; color:#061018; font-weight:700; }
+
+    .lang-wrap{ position:relative; }
+    .lang-select{ appearance:none; -webkit-appearance:none; -moz-appearance:none; padding:10px 34px 10px 12px; border-radius:12px; background:#0f131a; color:var(--text); border:1px solid #24324d; }
+    .lang-select:focus{ outline:2px solid var(--primary); outline-offset:2px; }
+    .lang-wrap .chev{ position:absolute; right:10px; top:50%; transform:translateY(-50%); pointer-events:none; color:var(--muted); font-size:12px; }
+    .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+    /* ===== Contenido ===== */
+    .hero{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:16px; align-items:start; padding:30px 0 8px; }
+    .card{ background:#0f131a; border:1px solid #1f2430; border-radius:16px; padding:18px; }
+    .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .muted{ color:var(--muted); }
+    .lead{ color:var(--muted); margin-top:6px; }
+    .pill{ display:inline-block; padding:8px 10px; border:1px solid #1f2a44; border-radius:10px; background:var(--panel); }
+    .steps li{ margin:.35em 0; }
+    .summary-list{ margin:0 0 0 18px; }
+    .summary-list li{ margin:.25em 0; }
+
+    /* ===== Footer ===== */
+    .site-footer{ border-top:1px solid #1f2a44; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005)); padding:28px 0 16px; margin-top:40px; }
+    .footer-grid{ display:grid; gap:18px; grid-template-columns:1.6fr 1fr 1fr 1.4fr; }
+    .footer-col h4{ margin:0 0 10px; font-size:14px; letter-spacing:.3px; text-transform:uppercase; color:#cfe0ff; }
+    .footer-links{ list-style:none; padding:0; margin:6px 0 0; }
+    .footer-links li{ margin:6px 0; }
+    .footer-links a{ color:var(--muted); text-decoration:none; }
+    .footer-links a:hover{ color:#fff; }
+    .social{ display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
+    .social a{ display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border:1px solid #1f2a44; border-radius:10px; color:var(--muted); text-decoration:none; background:var(--panel); transition:transform .15s ease, border-color .15s ease, color .15s ease; }
+    .social a:hover{ color:#fff; border-color:#2b3a5f; transform:translateY(-1px); }
+
+    .legal-bar{ border-top:1px solid #1f2a44; margin-top:18px; padding-top:14px; display:flex; justify-content:space-between; align-items:center; }
+    .small{ font-size:13px; }
+
+    @media (max-width:900px){
+      .nav-wrap{ flex-wrap:wrap; }
+      .site-links{ order:3; width:100%; justify-content:center; padding:8px 0; }
+      .nav-cta{ order:2; margin-left:auto; }
+      .hero{ grid-template-columns:1fr; }
+      .grid-2{ grid-template-columns:1fr; }
+      .footer-grid{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-nav">
+    <div class="container nav-wrap">
+      <a class="site-brand" href="index.html" data-keep-lang>
+        <img src="assets/logo.svg" alt="" onerror="this.style.display='none'">
+        <span>TokenVision</span>
+      </a>
+
+      <nav class="site-links">
+        <a href="index.html#features" data-keep-lang data-i18n="nav.features">Características</a>
+        <a href="precios.html" data-keep-lang data-i18n="nav.pricing">Precios</a>
+        <a href="docs/README.html" data-keep-lang data-i18n="nav.docs">Docs</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn" href="descarga.html" data-keep-lang data-i18n="nav.download">Descargar</a>
+        <a class="btn primary" href="precios.html#buy" data-keep-lang data-i18n="nav.buy">Comprar licencia</a>
+
+        <label for="lang" class="sr-only">Language</label>
+        <div class="lang-wrap">
+          <select id="lang" class="lang-select" aria-label="Language">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+            <option value="pt">Português</option>
+          </select>
+          <span class="chev" aria-hidden>▾</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container" style="padding:24px 0 0">
+    <section class="hero">
+      <div>
+        <h1 data-i18n="thanks.title">¡Gracias! Revisá tu email</h1>
+        <p class="lead">
+          <span data-i18n="thanks.subtitle1">Te enviamos un correo a:</span>
+          <span class="pill"><strong id="email">(tu email)</strong></span>
+        </p>
+        <p class="muted" data-i18n="thanks.subtitle2">
+          Si no lo ves, revisá Spam/Promociones. El asunto contiene “TokenVision licencia”.
+        </p>
+        <div class="cta" style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn primary" href="descarga.html" data-keep-lang data-keep-email data-i18n="thanks.btn_download">Ir a Descargas</a>
+          <a class="btn" href="index.html" data-keep-lang data-keep-email data-i18n="thanks.btn_home">Volver al inicio</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="thanks.box_title">Activá tu licencia (.jwt) en 5 pasos</h3>
+        <ol class="steps">
+          <li data-i18n="steps.1">Descargá e instalá TokenVision.</li>
+          <li data-i18n="steps.2">Abrí la app y entrá a “Licencia”.</li>
+          <li data-i18n="steps.3">Seleccioná tu archivo <code>license.jwt</code>.</li>
+          <li data-i18n="steps.4">Verificá el estado: debe figurar “Licencia válida”.</li>
+          <li data-i18n="steps.5">¡Listo! Empezá con Colector/Entrenador y corré el Predictor.</li>
+        </ol>
+        <p class="muted" data-i18n="thanks.help">¿Problemas? Escribinos a soporte con tu fingerprint y el error.</p>
+      </div>
+    </section>
+
+    <!-- Resumen de datos (opcional; se muestra si vienen en la URL) -->
+    <section class="card" id="summary" style="display:none; margin-top:12px">
+      <h3 data-i18n="thanks.summary_title">Resumen de tu compra</h3>
+      <ul class="summary-list muted">
+        <li id="sum-plan"   style="display:none"><strong data-i18n="sum.plan">Plan:</strong> <span></span></li>
+        <li id="sum-period" style="display:none"><strong data-i18n="sum.period">Período:</strong> <span></span></li>
+        <li id="sum-price"  style="display:none"><strong data-i18n="sum.price">Precio:</strong> <span></span></li>
+        <li id="sum-order"  style="display:none"><strong data-i18n="sum.order">Pedido #:</strong> <span></span></li>
+      </ul>
+    </section>
+
+    <section class="grid-2" style="margin-top:16px">
+      <div class="card">
+        <h3 data-i18n="thanks.tips_title">Siguientes pasos (recomendado)</h3>
+        <ul class="muted" style="margin:0 0 0 18px">
+          <li data-i18n="tips.1">Ejecutá el Colector (quick) para generar datos recientes.</li>
+          <li data-i18n="tips.2">Entrená modelos para tus tokens (Entrenador).</li>
+          <li data-i18n="tips.3">Usá el Predictor con umbrales BUY/SELL y exportá CSV.</li>
+          <li data-i18n="tips.4">Activá Telegram para alertas (opcional).</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="thanks.links_title">Links útiles</h3>
+        <ul class="muted" style="margin:0 0 0 18px">
+          <li><a href="docs/README.html" data-keep-lang data-i18n="thanks.docs">Documentación</a></li>
+          <li><a href="precios.html" data-keep-lang data-i18n="thanks.pricing">Precios</a></li>
+          <li><a href="privacidad.html" data-keep-lang data-i18n="thanks.privacy">Privacidad</a></li>
+          <li><a href="terminos.html" data-keep-lang data-i18n="thanks.terms">Términos</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (unificado del sitio) -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a class="site-brand" href="index.html" data-keep-lang>
+          <img src="assets/logo.svg" alt="" onerror="this.style.display='none'">
+          <span>TokenVision</span>
+        </a>
+        <p class="muted" data-i18n="footer.tagline">Señales cripto con modelos reales.</p>
+
+        <div class="social">
+          <a href="https://x.com/tucuenta" data-icon="x" target="_blank" rel="noopener">Twitter</a>
+          <a href="https://youtube.com/@tu" data-icon="yt" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://t.me/tucanal" data-icon="tg" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.product">Producto</h4>
+        <ul class="footer-links">
+          <li><a href="descarga.html" data-keep-lang data-i18n="nav.download">Descargar</a></li>
+          <li><a href="precios.html" data-keep-lang data-i18n="nav.pricing">Precios</a></li>
+          <li><a href="docs/README.html" data-keep-lang data-i18n="nav.docs">Docs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.legal">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="terminos.html" data-keep-lang data-i18n="footer.terms">Términos</a></li>
+          <li><a href="privacidad.html" data-keep-lang data-i18n="footer.privacy">Privacidad</a></li>
+          <li><a href="gracias.html" data-keep-lang data-i18n="footer.thanks">Gracias</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.news.title">Novedades</h4>
+        <p class="muted" data-i18n="footer.news.copy">Te avisamos muy de vez en cuando.</p>
+        <form id="newsletter-form">
+          <input id="nl-email" type="email" required placeholder="tu@email.com" class="nl-input" autocomplete="email" inputmode="email">
+          <button class="btn primary" type="submit" data-i18n="footer.news.btn">Suscribirme</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container legal-bar">
+      <span class="muted small" data-i18n="footer.copy">© 2025 TokenVision</span>
+      <span class="muted small">v1</span>
+    </div>
+  </footer>
+
+  <!-- i18n + persistencia de lang + email + resumen de datos + newsletter -->
+  <script>
+    const translations = {
+      es: {
+        "meta.title":"TokenVision – Gracias",
+        "nav.features":"Características","nav.pricing":"Precios","nav.docs":"Docs","nav.download":"Descargar","nav.buy":"Comprar licencia",
+
+        "thanks.title":"¡Gracias! Revisá tu email",
+        "thanks.subtitle1":"Te enviamos un correo a:",
+        "thanks.subtitle2":"Si no lo ves, revisá Spam/Promociones. El asunto contiene “TokenVision licencia”.",
+        "thanks.btn_download":"Ir a Descargas","thanks.btn_home":"Volver al inicio",
+        "thanks.box_title":"Activá tu licencia (.jwt) en 5 pasos",
+        "thanks.help":"¿Problemas? Escribinos a soporte con tu fingerprint y el error.",
+        "thanks.tips_title":"Siguientes pasos (recomendado)",
+        "thanks.links_title":"Links útiles",
+        "thanks.docs":"Documentación","thanks.pricing":"Precios","thanks.privacy":"Privacidad","thanks.terms":"Términos",
+        "thanks.summary_title":"Resumen de tu compra",
+
+        "steps.1":"Descargá e instalá TokenVision.",
+        "steps.2":"Abrí la app y entrá a “Licencia”.",
+        "steps.3":"Seleccioná tu archivo license.jwt.",
+        "steps.4":"Verificá el estado: debe figurar “Licencia válida”.",
+        "steps.5":"¡Listo! Empezá con Colector/Entrenador y corré el Predictor.",
+
+        "tips.1":"Ejecutá el Colector (quick) para generar datos recientes.",
+        "tips.2":"Entrená modelos para tus tokens (Entrenador).",
+        "tips.3":"Usá el Predictor con umbrales BUY/SELL y exportá CSV.",
+        "tips.4":"Activá Telegram para alertas (opcional).",
+
+        "sum.plan":"Plan:",
+        "sum.period":"Período:",
+        "sum.price":"Precio:",
+        "sum.order":"Pedido #:",
+
+        "footer.product":"Producto","footer.legal":"Legal","footer.terms":"Términos","footer.privacy":"Privacidad","footer.thanks":"Gracias",
+        "footer.tagline":"Señales cripto con modelos reales.","footer.news.title":"Novedades","footer.news.copy":"Te avisamos muy de vez en cuando.","footer.news.btn":"Suscribirme","footer.copy":"© 2025 TokenVision"
+      },
+      en: {
+        "meta.title":"TokenVision – Thanks",
+        "nav.features":"Features","nav.pricing":"Pricing","nav.docs":"Docs","nav.download":"Download","nav.buy":"Buy license",
+
+        "thanks.title":"Thanks! Check your email",
+        "thanks.subtitle1":"We sent an email to:",
+        "thanks.subtitle2":"If you don't see it, check Spam/Promotions. Subject contains “TokenVision license”.",
+        "thanks.btn_download":"Go to Downloads","thanks.btn_home":"Back to home",
+        "thanks.box_title":"Activate your license (.jwt) in 5 steps",
+        "thanks.help":"Issues? Email support with your fingerprint and the error.",
+        "thanks.tips_title":"Next steps (recommended)",
+        "thanks.links_title":"Useful links",
+        "thanks.docs":"Docs","thanks.pricing":"Pricing","thanks.privacy":"Privacy","thanks.terms":"Terms",
+        "thanks.summary_title":"Your purchase summary",
+
+        "steps.1":"Download and install TokenVision.",
+        "steps.2":"Open the app and go to “License”.",
+        "steps.3":"Select your license.jwt file.",
+        "steps.4":"Verify status: it should say “Valid license”.",
+        "steps.5":"Done! Run Collector/Trainer and the Predictor.",
+
+        "tips.1":"Run Collector (quick) to get fresh data.",
+        "tips.2":"Train models for your tokens (Trainer).",
+        "tips.3":"Use Predictor with BUY/SELL thresholds and CSV export.",
+        "tips.4":"Enable Telegram alerts (optional).",
+
+        "sum.plan":"Plan:",
+        "sum.period":"Period:",
+        "sum.price":"Price:",
+        "sum.order":"Order #:",
+
+        "footer.product":"Product","footer.legal":"Legal","footer.terms":"Terms","footer.privacy":"Privacy","footer.thanks":"Thanks",
+        "footer.tagline":"Real models. Real crypto signals.","footer.news.title":"Newsletter","footer.news.copy":"We’ll ping you rarely.","footer.news.btn":"Subscribe","footer.copy":"© 2025 TokenVision"
+      },
+      pt: {
+        "meta.title":"TokenVision – Obrigado",
+        "nav.features":"Recursos","nav.pricing":"Preços","nav.docs":"Docs","nav.download":"Baixar","nav.buy":"Comprar licença",
+
+        "thanks.title":"Obrigado! Confira seu e-mail",
+        "thanks.subtitle1":"Enviamos um e-mail para:",
+        "thanks.subtitle2":"Se não achar, verifique Spam/Promoções. Assunto contém “TokenVision licença”.",
+        "thanks.btn_download":"Ir para Downloads","thanks.btn_home":"Voltar ao início",
+        "thanks.box_title":"Ative sua licença (.jwt) em 5 passos",
+        "thanks.help":"Problemas? Envie e-mail ao suporte com seu fingerprint e o erro.",
+        "thanks.tips_title":"Próximos passos (recomendado)",
+        "thanks.links_title":"Links úteis",
+        "thanks.docs":"Documentação","thanks.pricing":"Preços","thanks.privacy":"Privacidade","thanks.terms":"Termos",
+        "thanks.summary_title":"Resumo da sua compra",
+
+        "steps.1":"Baixe e instale o TokenVision.",
+        "steps.2":"Abra o app e vá em “Licença”.",
+        "steps.3":"Selecione seu arquivo license.jwt.",
+        "steps.4":"Verifique o status: deve constar “Licença válida”.",
+        "steps.5":"Pronto! Rode Coletor/Treinador e o Previsor.",
+
+        "tips.1":"Rode o Coletor (quick) para dados recentes.",
+        "tips.2":"Treine modelos para seus tokens (Treinador).",
+        "tips.3":"Use o Previsor com limites BUY/SELL e exporte CSV.",
+        "tips.4":"Ative alertas no Telegram (opcional).",
+
+        "sum.plan":"Plano:",
+        "sum.period":"Período:",
+        "sum.price":"Preço:",
+        "sum.order":"Pedido #:",
+
+        "footer.product":"Produto","footer.legal":"Legal","footer.terms":"Termos","footer.privacy":"Privacidade","footer.thanks":"Obrigado",
+        "footer.tagline":"Sinais cripto com modelos reais.","footer.news.title":"Novidades","footer.news.copy":"Avisamos raramente.","footer.news.btn":"Assinar","footer.copy":"© 2025 TokenVision"
+      }
+    };
+
+    const $$ = (s,r=document)=>Array.from(r.querySelectorAll(s));
+    const getLang = ()=>{
+      const qs = new URLSearchParams(location.search).get('lang');
+      const st = localStorage.getItem('lang');
+      const nv = (navigator.language||'es').slice(0,2).toLowerCase();
+      const src = (qs||st||nv);
+      return src.startsWith('pt')?'pt': src.startsWith('en')?'en':'es';
+    };
+
+    function applyI18n(lang){
+      const d = translations[lang] || translations.es;
+      document.documentElement.setAttribute('lang', lang);
+      if(d["meta.title"]) document.title = d["meta.title"];
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc){
+        metaDesc.setAttribute('content',
+          lang==='en' ? 'Thanks for your purchase. We emailed your TokenVision license.' :
+          lang==='pt' ? 'Obrigado pela compra. Enviamos sua licença do TokenVision por e-mail.' :
+                        'Gracias por tu compra. Te enviamos la licencia de TokenVision por email.'
+        );
+      }
+      $$('[data-i18n]').forEach(el=>{ const k=el.getAttribute('data-i18n'); if(d[k]) el.textContent=d[k]; });
+      localStorage.setItem('lang', lang);
+      const sel=document.getElementById('lang'); if(sel) sel.value=lang;
+    }
+
+    function keepLang(lang){
+      $$('a[data-keep-lang]').forEach(a=>{
+        const href=a.getAttribute('href')||'';
+        if(!href || /^https?:\/\//i.test(href) || href.startsWith('mailto:')) return;
+        const [base,hash]=href.split('#');
+        const u=new URL(base,location.origin);
+        u.searchParams.set('lang', lang);
+        a.setAttribute('href', u.pathname.replace(/^\//,'') + u.search + (hash?('#'+hash):''));
+      });
+    }
+
+    // Propagar ?email= a CTAs marcados SIN dejarlo en la barra
+    function keepEmail(emailStr){
+      if(!emailStr) return;
+      $$('a[data-keep-email]').forEach(a=>{
+        const href=a.getAttribute('href')||'';
+        if(!href || /^https?:\/\//i.test(href) || href.startsWith('mailto:')) return;
+        const [base,hash]=href.split('#');
+        const u=new URL(base,location.origin);
+        const lang = new URLSearchParams(location.search).get('lang') || localStorage.getItem('lang');
+        if(lang) u.searchParams.set('lang', lang);
+        u.searchParams.set('email', emailStr);
+        a.setAttribute('href', u.pathname.replace(/^\//,'') + u.search + (hash?('#'+hash):''));
+      });
+    }
+
+    function markActive(){
+      const here=(location.pathname.split('/').pop()||'gracias.html').toLowerCase();
+      $$('.site-links a').forEach(a=>{
+        const base=(a.getAttribute('href')||'').split('?')[0].split('#')[0];
+        const f=(base.split('/').pop()||'').toLowerCase();
+        const active=f ? (f===here) : false;
+        a.classList.toggle('active', active);
+        if(active) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+      });
+    }
+
+    // Newsletter demo -> gracias.html?email=&lang=
+    function wireNewsletter(lang){
+      const form=document.getElementById('newsletter-form');
+      if(!form) return;
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const email=(document.getElementById('nl-email')?.value||'').trim();
+        const ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        if(!ok){ alert(lang==='pt'?'Insira um e-mail válido': lang==='en'?'Enter a valid email':'Ingresá un email válido'); return; }
+        const url=new URL('gracias.html', location.href);
+        url.searchParams.set('email', email);
+        url.searchParams.set('lang', lang);
+        location.href=url.toString();
+      });
+    }
+
+    // ===== Leer datos del querystring =====
+    const params=new URLSearchParams(location.search);
+    const emailParamRaw=params.get('email')||'';
+    const emailParam=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailParamRaw) ? emailParamRaw : '';
+
+    // Datos extra (opcionales)
+    const plan = params.get('plan') || '';
+    const period = params.get('period') || '';
+    const price = params.get('price') || '';
+    const order = params.get('order') || params.get('tx') || '';
+
+    // Pintar email visible
+    const emailEl=document.getElementById('email');
+    if(emailEl) emailEl.textContent = emailParam || '(tu email)';
+
+    // Resumen dinámico (solo si hay algún dato)
+    (function fillSummary(){
+      const lang = getLang();
+      const d = translations[lang] || translations.es;
+      const showSummary = !!(plan || period || price || order);
+      const $sum = document.getElementById('summary');
+      if(!$sum) return;
+      if(!showSummary){ $sum.style.display='none'; return; }
+      $sum.style.display='block';
+
+      function setRow(id, value){
+        const row=document.getElementById(id);
+        if(!row) return;
+        if(value){ row.style.display='list-item'; row.querySelector('span').textContent=value; }
+        else{ row.style.display='none'; }
+      }
+
+      // Etiquetas ya están traducidas por data-i18n; acá sólo valores:
+      setRow('sum-plan', plan);
+      setRow('sum-period', period);
+      setRow('sum-price', price ? (/^\d/.test(price) ? `USD ${price}` : price) : '');
+      setRow('sum-order', order);
+    })();
+
+    // Init
+    const initial=getLang();
+    applyI18n(initial);
+    keepLang(initial);
+    keepEmail(emailParam);
+    markActive();
+    wireNewsletter(initial);
+
+    // Limpiar ?email= de la barra por privacidad (conserva otros datos como plan/price)
+    if(emailParam){
+      const cleaned=new URL(location.href);
+      cleaned.searchParams.delete('email');
+      history.replaceState({}, '', cleaned);
+    }
+
+    // Cambio de idioma
+    document.getElementById('lang').addEventListener('change', e=>{
+      const lang=e.target.value;
+      applyI18n(lang);
+      keepLang(lang);
+      keepEmail(emailParam);
+      const url=new URL(location.href); url.searchParams.set('lang', lang);
+      history.replaceState({},'',url);
+    });
+  </script>
+</body>
+</html>
+>>>>>>> 455a3573a8ce6acd49ef239dd49a9828723f6991
