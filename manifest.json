@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {
 "app_name": "TokenLens",
 "version": "0.9.0",
@@ -31,7 +31,7 @@
 "size_bytes": 0
 }
 ]
-=======
+
 {
 "app_name": "TokenLens",
 "version": "0.9.0",
@@ -64,5 +64,5 @@
 "size_bytes": 0
 }
 ]
->>>>>>> 455a3573a8ce6acd49ef239dd49a9828723f6991
+
 }
