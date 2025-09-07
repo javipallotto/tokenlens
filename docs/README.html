@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="meta.title">TokenVision – Documentación</title>
-  <meta name="description" content="Guía de instalación, activación y uso de TokenVision: Colector, Entrenador y Predictor.">
+  <title data-i18n="meta.title">TokenLens – Documentación</title>
+  <meta name="description" content="Guía de instalación, activación y uso de TokenLens: Colector, Entrenador y Predictor.">
   <link rel="stylesheet" href="../assets/styles.css" />
 
   <style>
@@ -72,7 +72,7 @@
     <div class="container nav-wrap">
       <a class="site-brand" href="../index.html" data-keep-lang>
         <img src="../assets/logo.svg" alt="" onerror="this.style.display='none'">
-        <span>TokenVision</span>
+        <span>TokenLens</span>
       </a>
 
       <nav class="site-links">
@@ -141,7 +141,7 @@
         <li data-i18n="win.1">Descargá el instalador desde <a href="../descarga.html" data-keep-lang>Descargar</a>.</li>
         <li data-i18n="win.2">Hacé doble clic en el <span class="kbd">.exe</span> y seguí los pasos.</li>
         <li data-i18n="win.3">Si Windows SmartScreen muestra alerta, clic en <span class="kbd">Más información</span> → <span class="kbd">Ejecutar de todas formas</span>.</li>
-        <li data-i18n="win.4">Abrí TokenVision desde el menú inicio.</li>
+        <li data-i18n="win.4">Abrí TokenLens desde el menú inicio.</li>
       </ol>
     </section>
 
@@ -161,8 +161,8 @@
       <h3 data-i18n="linux.title">Instalación en Linux</h3>
       <p class="muted" data-i18n="linux.desc">Usá AppImage cuando esté disponible o instalación manual.</p>
       <pre><code># Ejemplo AppImage
-chmod +x TokenVision_Linux.AppImage
-./TokenVision_Linux.AppImage
+chmod +x TokenLens_Linux.AppImage
+./TokenLens_Linux.AppImage
 </code></pre>
     </section>
 
@@ -272,7 +272,7 @@ chmod +x TokenVision_Linux.AppImage
       <div class="footer-col">
         <a class="site-brand" href="../index.html" data-keep-lang>
           <img src="../assets/logo.svg" alt="" onerror="this.style.display='none'">
-          <span>TokenVision</span>
+          <span>TokenLens</span>
         </a>
         <p class="muted" data-i18n="footer.tagline">Señales cripto con modelos reales.</p>
 
@@ -312,7 +312,7 @@ chmod +x TokenVision_Linux.AppImage
     </div>
 
     <div class="container legal-bar">
-      <span class="muted small" data-i18n="footer.copy">© 2025 TokenVision</span>
+      <span class="muted small" data-i18n="footer.copy">© 2025 TokenLens</span>
       <span class="muted small">v1</span>
     </div>
   </footer>
@@ -321,12 +321,12 @@ chmod +x TokenVision_Linux.AppImage
   <script>
     const translations = {
       es:{
-        "meta.title":"TokenVision – Documentación",
+        "meta.title":"TokenLens – Documentación",
         "nav.features":"Características","nav.pricing":"Precios","nav.docs":"Docs","nav.download":"Descargar","nav.buy":"Comprar licencia",
         "title":"Documentación","subtitle":"Instalación, activación y flujo de trabajo (Colector → Entrenador → Predictor).",
         "toc.title":"Contenido","toc.req":"Requisitos","toc.win":"Instalación en Windows","toc.mac":"Instalación en macOS","toc.linux":"Instalación en Linux","toc.license":"Activar licencia","toc.pipeline":"Pipeline de trabajo","toc.config":"Configuración","toc.telegram":"Alertas por Telegram","toc.troubleshooting":"Solución de problemas","toc.faq":"FAQ",
         "req.title":"Requisitos","req.os":"Windows 10+ (x64). macOS 12+ (Apple/Intel). Linux x64 (glibc reciente).","req.hw":"4 GB RAM / 500 MB de disco (recomendado: 8 GB RAM).","req.net":"Conexión estable a Internet para APIs de exchanges.",
-        "win.title":"Instalación en Windows","win.1":"Descargá el instalador desde Descargar.","win.2":"Hacé doble clic en el .exe y seguí los pasos.","win.3":"Si Windows SmartScreen muestra alerta, clic en Más información → Ejecutar de todas formas.","win.4":"Abrí TokenVision desde el menú inicio.",
+        "win.title":"Instalación en Windows","win.1":"Descargá el instalador desde Descargar.","win.2":"Hacé doble clic en el .exe y seguí los pasos.","win.3":"Si Windows SmartScreen muestra alerta, clic en Más información → Ejecutar de todas formas.","win.4":"Abrí TokenLens desde el menú inicio.",
         "mac.title":"Instalación en macOS","mac.desc":"Instalador .dmg próximamente. Mientras tanto, seguí estos pasos:","mac.1":"Descargá el build o seguí la guía de instalación manual.","mac.2":"Si Gatekeeper bloquea la app, abrí con clic derecho → Abrir.","mac.3":"Permití el acceso de red cuando se solicite.",
         "linux.title":"Instalación en Linux","linux.desc":"Usá AppImage cuando esté disponible o instalación manual.",
         "lic.title":"Activar licencia (.jwt)","lic.1":"Tras la compra, recibís por email tu archivo license.jwt.","lic.2":"Abrí la app → menú Licencia → Cargar archivo.","lic.3":"Verificá que el estado muestre Licencia válida.",
@@ -341,15 +341,15 @@ chmod +x TokenVision_Linux.AppImage
         "faq.title":"FAQ","faq.q1":"¿Necesito claves de exchange?","faq.a1":"No para generar señales. Sólo si activás un bot de ejecución (read-only y mínimos permisos).","faq.q2":"¿Cada cuánto reentreno?","faq.a2":"Depende del token y tu horizonte. Semanal o por evento de mercado es un buen punto de partida.","faq.q3":"¿Dónde se guardan los CSV?","faq.a3":"En la carpeta de trabajo definida por la app (p. ej. ./output/).",
         "updated":"Última actualización: 2025-09-06",
         "footer.product":"Producto","footer.legal":"Legal","footer.terms":"Términos","footer.privacy":"Privacidad","footer.thanks":"Gracias",
-        "footer.tagline":"Señales cripto con modelos reales.","footer.news.title":"Novedades","footer.news.copy":"Te avisamos muy de vez en cuando.","footer.news.btn":"Suscribirme","footer.copy":"© 2025 TokenVision"
+        "footer.tagline":"Señales cripto con modelos reales.","footer.news.title":"Novedades","footer.news.copy":"Te avisamos muy de vez en cuando.","footer.news.btn":"Suscribirme","footer.copy":"© 2025 TokenLens"
       },
       en:{
-        "meta.title":"TokenVision – Docs",
+        "meta.title":"TokenLens – Docs",
         "nav.features":"Features","nav.pricing":"Pricing","nav.docs":"Docs","nav.download":"Download","nav.buy":"Buy license",
         "title":"Documentation","subtitle":"Install, activate, and run the workflow (Collector → Trainer → Predictor).",
         "toc.title":"Contents","toc.req":"Requirements","toc.win":"Install on Windows","toc.mac":"Install on macOS","toc.linux":"Install on Linux","toc.license":"Activate license","toc.pipeline":"Workflow","toc.config":"Configuration","toc.telegram":"Telegram alerts","toc.troubleshooting":"Troubleshooting","toc.faq":"FAQ",
         "req.title":"Requirements","req.os":"Windows 10+ (x64). macOS 12+ (Apple/Intel). Linux x64 (recent glibc).","req.hw":"4 GB RAM / 500 MB disk (8 GB RAM recommended).","req.net":"Stable internet connection for exchange APIs.",
-        "win.title":"Install on Windows","win.1":"Download the installer from Download.","win.2":"Double-click the .exe and follow the steps.","win.3":"If SmartScreen warns, click More info → Run anyway.","win.4":"Open TokenVision from Start menu.",
+        "win.title":"Install on Windows","win.1":"Download the installer from Download.","win.2":"Double-click the .exe and follow the steps.","win.3":"If SmartScreen warns, click More info → Run anyway.","win.4":"Open TokenLens from Start menu.",
         "mac.title":"Install on macOS","mac.desc":".dmg installer coming soon. Meanwhile:","mac.1":"Download the build or follow the manual guide.","mac.2":"If Gatekeeper blocks, right-click → Open.","mac.3":"Allow network access when prompted.",
         "linux.title":"Install on Linux","linux.desc":"Use AppImage when available or manual install.",
         "lic.title":"Activate license (.jwt)","lic.1":"After purchase you’ll receive license.jwt via email.","lic.2":"Open the app → License → Load file.","lic.3":"Verify status shows Valid license.",
@@ -364,15 +364,15 @@ chmod +x TokenVision_Linux.AppImage
         "faq.title":"FAQ","faq.q1":"Do I need exchange API keys?","faq.a1":"Not for signal generation. Only if you enable an execution bot (read-only, minimal scopes).","faq.q2":"How often to retrain?","faq.a2":"Depends on the asset and horizon. Weekly or after major events works well.","faq.q3":"Where are CSVs stored?","faq.a3":"In the working directory chosen by the app (e.g., ./output/).",
         "updated":"Last updated: 2025-09-06",
         "footer.product":"Product","footer.legal":"Legal","footer.terms":"Terms","footer.privacy":"Privacy","footer.thanks":"Thanks",
-        "footer.tagline":"Real models. Real crypto signals.","footer.news.title":"Newsletter","footer.news.copy":"We’ll ping you rarely.","footer.news.btn":"Subscribe","footer.copy":"© 2025 TokenVision"
+        "footer.tagline":"Real models. Real crypto signals.","footer.news.title":"Newsletter","footer.news.copy":"We’ll ping you rarely.","footer.news.btn":"Subscribe","footer.copy":"© 2025 TokenLens"
       },
       pt:{
-        "meta.title":"TokenVision – Documentação",
+        "meta.title":"TokenLens – Documentação",
         "nav.features":"Recursos","nav.pricing":"Preços","nav.docs":"Docs","nav.download":"Baixar","nav.buy":"Comprar licença",
         "title":"Documentação","subtitle":"Instalação, ativação e fluxo (Coletor → Treinador → Previsor).",
         "toc.title":"Conteúdo","toc.req":"Requisitos","toc.win":"Instalar no Windows","toc.mac":"Instalar no macOS","toc.linux":"Instalar no Linux","toc.license":"Ativar licença","toc.pipeline":"Fluxo de trabalho","toc.config":"Configuração","toc.telegram":"Alertas no Telegram","toc.troubleshooting":"Solução de problemas","toc.faq":"FAQ",
         "req.title":"Requisitos","req.os":"Windows 10+ (x64). macOS 12+ (Apple/Intel). Linux x64 (glibc recente).","req.hw":"4 GB RAM / 500 MB disco (recomendado: 8 GB RAM).","req.net":"Internet estável para APIs das exchanges.",
-        "win.title":"Instalar no Windows","win.1":"Baixe o instalador em Baixar.","win.2":"Dê duplo clique no .exe e siga os passos.","win.3":"Se o SmartScreen alertar, Mais informações → Executar assim mesmo.","win.4":"Abra o TokenVision no menu iniciar.",
+        "win.title":"Instalar no Windows","win.1":"Baixe o instalador em Baixar.","win.2":"Dê duplo clique no .exe e siga os passos.","win.3":"Se o SmartScreen alertar, Mais informações → Executar assim mesmo.","win.4":"Abra o TokenLens no menu iniciar.",
         "linux.title":"Instalar no Linux","linux.desc":"Use AppImage quando disponível ou instalação manual.",
         "lic.title":"Ativar licença (.jwt)","lic.1":"Após a compra você recebe license.jwt por e-mail.","lic.2":"Abra o app → Licença → Carregar arquivo.","lic.3":"Verifique que o status mostre Licença válida.",
         "pipe.title":"Fluxo de trabalho",
@@ -386,7 +386,7 @@ chmod +x TokenVision_Linux.AppImage
         "faq.title":"FAQ","faq.q1":"Preciso de chaves de exchange?","faq.a1":"Não para gerar sinais. Só se ativar um bot de execução (somente leitura e escopos mínimos).","faq.q2":"Com que frequência re-treinar?","faq.a2":"Depende do ativo e horizonte. Semanal ou após eventos é um bom começo.","faq.q3":"Onde ficam os CSVs?","faq.a3":"Na pasta de trabalho definida pelo app (ex.: ./output/).",
         "updated":"Última atualização: 2025-09-06",
         "footer.product":"Produto","footer.legal":"Legal","footer.terms":"Termos","footer.privacy":"Privacidade","footer.thanks":"Obrigado",
-        "footer.tagline":"Sinais cripto com modelos reais.","footer.news.title":"Novidades","footer.news.copy":"Avisamos raramente.","footer.news.btn":"Assinar","footer.copy":"© 2025 TokenVision"
+        "footer.tagline":"Sinais cripto com modelos reais.","footer.news.title":"Novidades","footer.news.copy":"Avisamos raramente.","footer.news.btn":"Assinar","footer.copy":"© 2025 TokenLens"
       }
     };
 
@@ -407,9 +407,9 @@ chmod +x TokenVision_Linux.AppImage
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc){
         metaDesc.setAttribute('content',
-          lang==='en' ? 'Install, activation and workflow guide for TokenVision: Collector, Trainer, Predictor.' :
-          lang==='pt' ? 'Guia de instalação, ativação e uso do TokenVision: Coletor, Treinador, Previsor.' :
-                        'Guía de instalación, activación y uso de TokenVision: Colector, Entrenador y Predictor.'
+          lang==='en' ? 'Install, activation and workflow guide for TokenLens: Collector, Trainer, Predictor.' :
+          lang==='pt' ? 'Guia de instalação, ativação e uso do TokenLens: Coletor, Treinador, Previsor.' :
+                        'Guía de instalación, activación y uso de TokenLens: Colector, Entrenador y Predictor.'
         );
       }
       $$('[data-i18n]').forEach(el=>{ const k = el.getAttribute('data-i18n'); if (d[k]) el.textContent = d[k]; });
