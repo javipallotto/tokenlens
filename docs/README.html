@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="meta.title">TokenVision – Documentación</title>
+  <meta name="description" content="Guía de instalación, activación y uso de TokenVision: Colector, Entrenador y Predictor.">
+  <link rel="stylesheet" href="../assets/styles.css" />
+
+  <style>
+    /* ===== Header / Nav (igual al resto) ===== */
+    .site-nav{ background:rgba(255,255,255,.02); border-bottom:1px solid #1f2a44; }
+    .nav-wrap{ display:flex; align-items:center; justify-content:space-between; padding:12px 0; gap:16px; }
+    .site-brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); font-weight:700; }
+    .site-brand img{ width:24px; height:24px; }
+    .site-links{ display:flex; gap:18px; align-items:center; }
+    .site-links a{ color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:10px; border:1px solid transparent; background:transparent; }
+    .site-links a:hover{ color:#fff; border-color:#233251; background:#0f131a; }
+    .site-links a.active, .site-links a[aria-current="page"]{ color:var(--text); border-color:#2a3a5c; background:#0f131a; position:relative; }
+    .site-links a.active::after{ content:""; position:absolute; left:10px; right:10px; bottom:-7px; height:2px; background:linear-gradient(90deg,var(--primary),var(--accent)); border-radius:2px; }
+
+    .nav-cta{ display:flex; align-items:center; gap:12px; }
+    .btn{ display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid #24324d; color:var(--text); text-decoration:none; background:#151922; }
+    .btn:hover{ border-color:#2b3a5f; }
+    .btn.primary{ background:linear-gradient(135deg,var(--primary),var(--accent)); border:0; color:#061018; font-weight:700; }
+
+    .lang-wrap{ position:relative; }
+    .lang-select{ appearance:none; -webkit-appearance:none; -moz-appearance:none; padding:10px 34px 10px 12px; border-radius:12px; background:#0f131a; color:var(--text); border:1px solid #24324d; }
+    .lang-select:focus{ outline:2px solid var(--primary); outline-offset:2px; }
+    .lang-wrap .chev{ position:absolute; right:10px; top:50%; transform:translateY(-50%); pointer-events:none; color:var(--muted); font-size:12px; }
+    .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+    /* ===== Contenido ===== */
+    .hero{ padding:30px 0 8px; }
+    .lead{ color:var(--muted); margin-top:6px; }
+    .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .card{ background:#0f131a; border:1px solid #1f2430; border-radius:16px; padding:18px; }
+    .muted{ color:var(--muted); }
+
+    .toc{ background:#0f131a; border:1px dashed #25314a; border-radius:14px; padding:14px; }
+    .toc a{ color:#9ec3ff; text-decoration:none; }
+    .toc a:hover{ text-decoration:underline; }
+    .kbd{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size:.95em; background:#0b0f16; border:1px solid #1f2a44; border-radius:6px; padding:2px 6px; }
+    pre{ background:#0b0f16; border:1px solid #1f2a44; border-radius:12px; padding:12px; overflow:auto; }
+    code{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+
+    /* ===== Footer ===== */
+    .site-footer{ border-top:1px solid #1f2a44; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005)); padding:28px 0 16px; margin-top:40px; }
+    .footer-grid{ display:grid; grid-template-columns: 1.6fr 1fr 1fr 1.4fr; gap:18px; }
+    .footer-col h4{ margin:0 0 10px; font-size:14px; letter-spacing:.3px; text-transform:uppercase; color:#cfe0ff; }
+    .footer-links{ list-style:none; padding:0; margin:6px 0 0; }
+    .footer-links li{ margin:6px 0; }
+    .footer-links a{ color:var(--muted); text-decoration:none; }
+    .footer-links a:hover{ color:#fff; }
+    .legal-bar{ border-top:1px solid #1f2a44; margin-top:18px; padding-top:14px; display:flex; justify-content:space-between; align-items:center; }
+    .small{ font-size:13px; }
+    .nl-input{ width:100%; padding:10px 12px; border-radius:10px; margin-bottom:8px; background:#0f131a; color:var(--text); border:1px solid #1f2a44; }
+
+    @media (max-width:900px){
+      .nav-wrap{ flex-wrap:wrap; }
+      .site-links{ order:3; width:100%; justify-content:center; padding:8px 0; }
+      .nav-cta{ order:2; margin-left:auto; }
+      .grid-2{ grid-template-columns:1fr; }
+      .footer-grid{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-nav">
+    <div class="container nav-wrap">
+      <a class="site-brand" href="../index.html" data-keep-lang>
+        <img src="../assets/logo.svg" alt="" onerror="this.style.display='none'">
+        <span>TokenVision</span>
+      </a>
+
+      <nav class="site-links">
+        <a href="../index.html#features" data-keep-lang data-i18n="nav.features">Características</a>
+        <a href="../precios.html" data-keep-lang data-i18n="nav.pricing">Precios</a>
+        <a href="README.html" data-keep-lang data-i18n="nav.docs">Docs</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn" href="../descarga.html" data-keep-lang data-i18n="nav.download">Descargar</a>
+        <a class="btn primary" href="../precios.html#buy" data-keep-lang data-i18n="nav.buy">Comprar licencia</a>
+
+        <label for="lang" class="sr-only">Language</label>
+        <div class="lang-wrap">
+          <select id="lang" class="lang-select" aria-label="Language">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+            <option value="pt">Português</option>
+          </select>
+          <span class="chev" aria-hidden>▾</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container" style="padding:24px 0 0">
+    <section class="hero">
+      <div>
+        <h1 data-i18n="title">Documentación</h1>
+        <p class="lead" data-i18n="subtitle">Instalación, activación y flujo de trabajo (Colector → Entrenador → Predictor).</p>
+      </div>
+    </section>
+
+    <!-- TOC -->
+    <section class="toc" aria-labelledby="toc-title">
+      <strong id="toc-title" data-i18n="toc.title">Contenido</strong>
+      <ul style="margin:6px 0 0 18px">
+        <li><a href="#requisitos" data-i18n="toc.req">Requisitos</a></li>
+        <li><a href="#instalacion-windows" data-i18n="toc.win">Instalación en Windows</a></li>
+        <li><a href="#instalacion-macos" data-i18n="toc.mac">Instalación en macOS</a></li>
+        <li><a href="#instalacion-linux" data-i18n="toc.linux">Instalación en Linux</a></li>
+        <li><a href="#activacion" data-i18n="toc.license">Activar licencia</a></li>
+        <li><a href="#pipeline" data-i18n="toc.pipeline">Pipeline de trabajo</a></li>
+        <li><a href="#config" data-i18n="toc.config">Configuración</a></li>
+        <li><a href="#telegram" data-i18n="toc.telegram">Alertas por Telegram</a></li>
+        <li><a href="#troubleshooting" data-i18n="toc.troubleshooting">Solución de problemas</a></li>
+        <li><a href="#faq" data-i18n="toc.faq">FAQ</a></li>
+      </ul>
+    </section>
+
+    <!-- Requisitos -->
+    <section class="card" id="requisitos" style="margin-top:16px">
+      <h3 data-i18n="req.title">Requisitos</h3>
+      <ul class="muted" style="margin:0 0 0 18px">
+        <li data-i18n="req.os">Windows 10+ (x64). macOS 12+ (Apple/Intel). Linux x64 (glibc reciente).</li>
+        <li data-i18n="req.hw">4 GB RAM / 500 MB de disco (recomendado: 8 GB RAM).</li>
+        <li data-i18n="req.net">Conexión estable a Internet para APIs de exchanges.</li>
+      </ul>
+    </section>
+
+    <!-- Instalación Windows -->
+    <section class="card" id="instalacion-windows" style="margin-top:16px">
+      <h3 data-i18n="win.title">Instalación en Windows</h3>
+      <ol class="muted" style="margin:0 0 0 18px">
+        <li data-i18n="win.1">Descargá el instalador desde <a href="../descarga.html" data-keep-lang>Descargar</a>.</li>
+        <li data-i18n="win.2">Hacé doble clic en el <span class="kbd">.exe</span> y seguí los pasos.</li>
+        <li data-i18n="win.3">Si Windows SmartScreen muestra alerta, clic en <span class="kbd">Más información</span> → <span class="kbd">Ejecutar de todas formas</span>.</li>
+        <li data-i18n="win.4">Abrí TokenVision desde el menú inicio.</li>
+      </ol>
+    </section>
+
+    <!-- Instalación macOS -->
+    <section class="card" id="instalacion-macos" style="margin-top:16px">
+      <h3 data-i18n="mac.title">Instalación en macOS</h3>
+      <p class="muted" data-i18n="mac.desc">Instalador <span class="kbd">.dmg</span> próximamente. Mientras tanto, seguí estos pasos:</p>
+      <ol class="muted" style="margin:0 0 0 18px">
+        <li data-i18n="mac.1">Descargá el build o seguí la guía de instalación manual.</li>
+        <li data-i18n="mac.2">Si Gatekeeper bloquea la app, abrí con clic derecho → <span class="kbd">Abrir</span>.</li>
+        <li data-i18n="mac.3">Permití el acceso de red cuando se solicite.</li>
+      </ol>
+    </section>
+
+    <!-- Instalación Linux -->
+    <section class="card" id="instalacion-linux" style="margin-top:16px">
+      <h3 data-i18n="linux.title">Instalación en Linux</h3>
+      <p class="muted" data-i18n="linux.desc">Usá AppImage cuando esté disponible o instalación manual.</p>
+      <pre><code># Ejemplo AppImage
+chmod +x TokenVision_Linux.AppImage
+./TokenVision_Linux.AppImage
+</code></pre>
+    </section>
+
+    <!-- Activación -->
+    <section class="card" id="activacion" style="margin-top:16px">
+      <h3 data-i18n="lic.title">Activar licencia (.jwt)</h3>
+      <ol class="muted" style="margin:0 0 0 18px">
+        <li data-i18n="lic.1">Tras la compra, recibís por email tu archivo <span class="kbd">license.jwt</span>.</li>
+        <li data-i18n="lic.2">Abrí la app → menú <span class="kbd">Licencia</span> → <span class="kbd">Cargar archivo</span>.</li>
+        <li data-i18n="lic.3">Verificá que el estado muestre <span class="kbd">Licencia válida</span>.</li>
+      </ol>
+    </section>
+
+    <!-- Pipeline -->
+    <section class="card" id="pipeline" style="margin-top:16px">
+      <h3 data-i18n="pipe.title">Pipeline de trabajo</h3>
+      <div class="grid-2">
+        <div>
+          <h4 data-i18n="pipe.collector.title">1) Colector</h4>
+          <ul class="muted" style="margin:0 0 0 18px">
+            <li data-i18n="pipe.collector.1">Obtiene OHLCV y métricas recientes (VWAP, volumen).</li>
+            <li data-i18n="pipe.collector.2">Guarda datos locales para entrenamiento/predicción.</li>
+          </ul>
+          <h4 data-i18n="pipe.trainer.title" style="margin-top:10px">2) Entrenador (LSTM por token)</h4>
+          <ul class="muted" style="margin:0 0 0 18px">
+            <li data-i18n="pipe.trainer.1">Entrena modelos por símbolo con ventanas temporales.</li>
+            <li data-i18n="pipe.trainer.2">Genera checkpoints reutilizables.</li>
+          </ul>
+          <h4 data-i18n="pipe.predictor.title" style="margin-top:10px">3) Predictor</h4>
+          <ul class="muted" style="margin:0 0 0 18px">
+            <li data-i18n="pipe.predictor.1">Calcula probabilidad de entrada (ENTER).</li>
+            <li data-i18n="pipe.predictor.2">Emite BUY/SELL según umbrales y exporta CSV.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="pipe.tips.title">Tips</h4>
+          <ul class="muted" style="margin:0 0 0 18px">
+            <li data-i18n="pipe.tips.1">Actualizar datos con Colector antes de predecir.</li>
+            <li data-i18n="pipe.tips.2">Reentrenar periódicamente si cambian las condiciones.</li>
+            <li data-i18n="pipe.tips.3">Ajustar umbrales para tu perfil de riesgo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Config -->
+    <section class="card" id="config" style="margin-top:16px">
+      <h3 data-i18n="cfg.title">Configuración</h3>
+      <p class="muted" data-i18n="cfg.where">Archivo sugerido: <span class="kbd">config/config.json</span>.</p>
+      <pre><code>{
+  "symbols": ["BTC/USDT","ETH/USDT"],
+  "buy_threshold": 0.72,
+  "sell_threshold": 0.28,
+  "window": 128,
+  "telegram": {
+    "enabled": false,
+    "bot_token": "123:ABC",
+    "chat_id": "123456789"
+  }
+}</code></pre>
+      <ul class="muted" style="margin:0 0 0 18px">
+        <li data-i18n="cfg.buy">buy_threshold: prob. mínima para BUY.</li>
+        <li data-i18n="cfg.sell">sell_threshold: prob. máxima para SELL.</li>
+        <li data-i18n="cfg.window">window: tamaño de ventana para el modelo.</li>
+      </ul>
+    </section>
+
+    <!-- Telegram -->
+    <section class="card" id="telegram" style="margin-top:16px">
+      <h3 data-i18n="tg.title">Alertas por Telegram (opcional)</h3>
+      <ol class="muted" style="margin:0 0 0 18px">
+        <li data-i18n="tg.1">Creá un bot con @BotFather y obtené el <span class="kbd">BOT_TOKEN</span>.</li>
+        <li data-i18n="tg.2">Enviá un mensaje al bot para iniciar chat y obtené tu <span class="kbd">chat_id</span> (p. ej. con @userinfobot).</li>
+        <li data-i18n="tg.3">Activá en la config <span class="kbd">telegram.enabled=true</span> y completá credenciales.</li>
+      </ol>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section class="card" id="troubleshooting" style="margin-top:16px">
+      <h3 data-i18n="tr.title">Solución de problemas</h3>
+      <ul class="muted" style="margin:0 0 0 18px">
+        <li data-i18n="tr.a1"><strong>No descarga datos:</strong> verificá conexión, proxy/VPN y límites de API.</li>
+        <li data-i18n="tr.a2"><strong>Licencia inválida:</strong> revisá el archivo <span class="kbd">.jwt</span> y el reloj del sistema.</li>
+        <li data-i18n="tr.a3"><strong>Resultados raros:</strong> reentrená, ampliá datos y ajustá umbrales.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="card" id="faq" style="margin-top:16px">
+      <h3 data-i18n="faq.title">FAQ</h3>
+      <h4 data-i18n="faq.q1">¿Necesito claves de exchange?</h4>
+      <p class="muted" data-i18n="faq.a1">No para generar señales. Sólo si activás un bot de ejecución (read-only y mínimos permisos).</p>
+
+      <h4 data-i18n="faq.q2">¿Cada cuánto reentreno?</h4>
+      <p class="muted" data-i18n="faq.a2">Depende del token y tu horizonte. Semanal o por evento de mercado es un buen punto de partida.</p>
+
+      <h4 data-i18n="faq.q3">¿Dónde se guardan los CSV?</h4>
+      <p class="muted" data-i18n="faq.a3">En la carpeta de trabajo definida por la app (p. ej. <span class="kbd">./output/</span>).</p>
+    </section>
+
+    <p class="muted" style="margin-top:10px" data-i18n="updated">Última actualización: 2025-09-06</p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a class="site-brand" href="../index.html" data-keep-lang>
+          <img src="../assets/logo.svg" alt="" onerror="this.style.display='none'">
+          <span>TokenVision</span>
+        </a>
+        <p class="muted" data-i18n="footer.tagline">Señales cripto con modelos reales.</p>
+
+        <div class="social">
+          <a href="https://x.com/tucuenta" data-icon="x" target="_blank" rel="noopener">Twitter</a>
+          <a href="https://youtube.com/@tu" data-icon="yt" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://t.me/tucanal" data-icon="tg" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.product">Producto</h4>
+        <ul class="footer-links">
+          <li><a href="../descarga.html" data-keep-lang data-i18n="nav.download">Descargar</a></li>
+          <li><a href="../precios.html" data-keep-lang data-i18n="nav.pricing">Precios</a></li>
+          <li><a href="README.html" data-keep-lang data-i18n="nav.docs">Docs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.legal">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="../terminos.html" data-keep-lang data-i18n="footer.terms">Términos</a></li>
+          <li><a href="../privacidad.html" data-keep-lang data-i18n="footer.privacy">Privacidad</a></li>
+          <li><a href="../gracias.html" data-keep-lang data-i18n="footer.thanks">Gracias</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.news.title">Novedades</h4>
+        <p class="muted" data-i18n="footer.news.copy">Te avisamos muy de vez en cuando.</p>
+        <form id="newsletter-form">
+          <input id="nl-email" type="email" required placeholder="tu@email.com" class="nl-input">
+          <button class="btn primary" type="submit" data-i18n="footer.news.btn">Suscribirme</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container legal-bar">
+      <span class="muted small" data-i18n="footer.copy">© 2025 TokenVision</span>
+      <span class="muted small">v1</span>
+    </div>
+  </footer>
+
+  <!-- i18n + lang persist + active link + newsletter -->
+  <script>
+    const translations = {
+      es:{
+        "meta.title":"TokenVision – Documentación",
+        "nav.features":"Características","nav.pricing":"Precios","nav.docs":"Docs","nav.download":"Descargar","nav.buy":"Comprar licencia",
+        "title":"Documentación","subtitle":"Instalación, activación y flujo de trabajo (Colector → Entrenador → Predictor).",
+        "toc.title":"Contenido","toc.req":"Requisitos","toc.win":"Instalación en Windows","toc.mac":"Instalación en macOS","toc.linux":"Instalación en Linux","toc.license":"Activar licencia","toc.pipeline":"Pipeline de trabajo","toc.config":"Configuración","toc.telegram":"Alertas por Telegram","toc.troubleshooting":"Solución de problemas","toc.faq":"FAQ",
+        "req.title":"Requisitos","req.os":"Windows 10+ (x64). macOS 12+ (Apple/Intel). Linux x64 (glibc reciente).","req.hw":"4 GB RAM / 500 MB de disco (recomendado: 8 GB RAM).","req.net":"Conexión estable a Internet para APIs de exchanges.",
+        "win.title":"Instalación en Windows","win.1":"Descargá el instalador desde Descargar.","win.2":"Hacé doble clic en el .exe y seguí los pasos.","win.3":"Si Windows SmartScreen muestra alerta, clic en Más información → Ejecutar de todas formas.","win.4":"Abrí TokenVision desde el menú inicio.",
+        "mac.title":"Instalación en macOS","mac.desc":"Instalador .dmg próximamente. Mientras tanto, seguí estos pasos:","mac.1":"Descargá el build o seguí la guía de instalación manual.","mac.2":"Si Gatekeeper bloquea la app, abrí con clic derecho → Abrir.","mac.3":"Permití el acceso de red cuando se solicite.",
+        "linux.title":"Instalación en Linux","linux.desc":"Usá AppImage cuando esté disponible o instalación manual.",
+        "lic.title":"Activar licencia (.jwt)","lic.1":"Tras la compra, recibís por email tu archivo license.jwt.","lic.2":"Abrí la app → menú Licencia → Cargar archivo.","lic.3":"Verificá que el estado muestre Licencia válida.",
+        "pipe.title":"Pipeline de trabajo",
+        "pipe.collector.title":"1) Colector","pipe.collector.1":"Obtiene OHLCV y métricas recientes (VWAP, volumen).","pipe.collector.2":"Guarda datos locales para entrenamiento/predicción.",
+        "pipe.trainer.title":"2) Entrenador (LSTM por token)","pipe.trainer.1":"Entrena modelos por símbolo con ventanas temporales.","pipe.trainer.2":"Genera checkpoints reutilizables.",
+        "pipe.predictor.title":"3) Predictor","pipe.predictor.1":"Calcula probabilidad de entrada (ENTER).","pipe.predictor.2":"Emite BUY/SELL según umbrales y exporta CSV.",
+        "pipe.tips.title":"Tips","pipe.tips.1":"Actualizar datos con Colector antes de predecir.","pipe.tips.2":"Reentrenar periódicamente si cambian las condiciones.","pipe.tips.3":"Ajustar umbrales para tu perfil de riesgo.",
+        "cfg.title":"Configuración","cfg.where":"Archivo sugerido: config/config.json","cfg.buy":"buy_threshold: prob. mínima para BUY.","cfg.sell":"sell_threshold: prob. máxima para SELL.","cfg.window":"window: tamaño de ventana para el modelo.",
+        "tg.title":"Alertas por Telegram (opcional)","tg.1":"Creá un bot con @BotFather y obtené el BOT_TOKEN.","tg.2":"Enviá un mensaje al bot para iniciar chat y obtené tu chat_id (p. ej. con @userinfobot).","tg.3":"Activá en la config telegram.enabled=true y completá credenciales.",
+        "tr.title":"Solución de problemas","tr.a1":"No descarga datos: verificá conexión, proxy/VPN y límites de API.","tr.a2":"Licencia inválida: revisá el archivo .jwt y el reloj del sistema.","tr.a3":"Resultados raros: reentrená, ampliá datos y ajustá umbrales.",
+        "faq.title":"FAQ","faq.q1":"¿Necesito claves de exchange?","faq.a1":"No para generar señales. Sólo si activás un bot de ejecución (read-only y mínimos permisos).","faq.q2":"¿Cada cuánto reentreno?","faq.a2":"Depende del token y tu horizonte. Semanal o por evento de mercado es un buen punto de partida.","faq.q3":"¿Dónde se guardan los CSV?","faq.a3":"En la carpeta de trabajo definida por la app (p. ej. ./output/).",
+        "updated":"Última actualización: 2025-09-06",
+        "footer.product":"Producto","footer.legal":"Legal","footer.terms":"Términos","footer.privacy":"Privacidad","footer.thanks":"Gracias",
+        "footer.tagline":"Señales cripto con modelos reales.","footer.news.title":"Novedades","footer.news.copy":"Te avisamos muy de vez en cuando.","footer.news.btn":"Suscribirme","footer.copy":"© 2025 TokenVision"
+      },
+      en:{
+        "meta.title":"TokenVision – Docs",
+        "nav.features":"Features","nav.pricing":"Pricing","nav.docs":"Docs","nav.download":"Download","nav.buy":"Buy license",
+        "title":"Documentation","subtitle":"Install, activate, and run the workflow (Collector → Trainer → Predictor).",
+        "toc.title":"Contents","toc.req":"Requirements","toc.win":"Install on Windows","toc.mac":"Install on macOS","toc.linux":"Install on Linux","toc.license":"Activate license","toc.pipeline":"Workflow","toc.config":"Configuration","toc.telegram":"Telegram alerts","toc.troubleshooting":"Troubleshooting","toc.faq":"FAQ",
+        "req.title":"Requirements","req.os":"Windows 10+ (x64). macOS 12+ (Apple/Intel). Linux x64 (recent glibc).","req.hw":"4 GB RAM / 500 MB disk (8 GB RAM recommended).","req.net":"Stable internet connection for exchange APIs.",
+        "win.title":"Install on Windows","win.1":"Download the installer from Download.","win.2":"Double-click the .exe and follow the steps.","win.3":"If SmartScreen warns, click More info → Run anyway.","win.4":"Open TokenVision from Start menu.",
+        "mac.title":"Install on macOS","mac.desc":".dmg installer coming soon. Meanwhile:","mac.1":"Download the build or follow the manual guide.","mac.2":"If Gatekeeper blocks, right-click → Open.","mac.3":"Allow network access when prompted.",
+        "linux.title":"Install on Linux","linux.desc":"Use AppImage when available or manual install.",
+        "lic.title":"Activate license (.jwt)","lic.1":"After purchase you’ll receive license.jwt via email.","lic.2":"Open the app → License → Load file.","lic.3":"Verify status shows Valid license.",
+        "pipe.title":"Workflow",
+        "pipe.collector.title":"1) Collector","pipe.collector.1":"Fetches OHLCV and recent metrics (VWAP, volume).","pipe.collector.2":"Stores local data for training/prediction.",
+        "pipe.trainer.title":"2) Trainer (per-token LSTM)","pipe.trainer.1":"Trains per symbol with sliding windows.","pipe.trainer.2":"Produces reusable checkpoints.",
+        "pipe.predictor.title":"3) Predictor","pipe.predictor.1":"Computes entry probability (ENTER).","pipe.predictor.2":"Emits BUY/SELL by thresholds and exports CSV.",
+        "pipe.tips.title":"Tips","pipe.tips.1":"Refresh data with Collector before predicting.","pipe.tips.2":"Retrain periodically if regimes shift.","pipe.tips.3":"Tune thresholds to your risk profile.",
+        "cfg.title":"Configuration","cfg.where":"Suggested file: config/config.json","cfg.buy":"buy_threshold: minimum prob. for BUY.","cfg.sell":"sell_threshold: maximum prob. for SELL.","cfg.window":"window: model window size.",
+        "tg.title":"Telegram alerts (optional)","tg.1":"Create a bot via @BotFather and get BOT_TOKEN.","tg.2":"Message your bot to start and obtain chat_id (e.g., with @userinfobot).","tg.3":"Enable telegram.enabled=true in config and fill credentials.",
+        "tr.title":"Troubleshooting","tr.a1":"No data: check connectivity, proxy/VPN, and API limits.","tr.a2":"Invalid license: verify .jwt file and system clock.","tr.a3":"Weird outputs: retrain, add data, adjust thresholds.",
+        "faq.title":"FAQ","faq.q1":"Do I need exchange API keys?","faq.a1":"Not for signal generation. Only if you enable an execution bot (read-only, minimal scopes).","faq.q2":"How often to retrain?","faq.a2":"Depends on the asset and horizon. Weekly or after major events works well.","faq.q3":"Where are CSVs stored?","faq.a3":"In the working directory chosen by the app (e.g., ./output/).",
+        "updated":"Last updated: 2025-09-06",
+        "footer.product":"Product","footer.legal":"Legal","footer.terms":"Terms","footer.privacy":"Privacy","footer.thanks":"Thanks",
+        "footer.tagline":"Real models. Real crypto signals.","footer.news.title":"Newsletter","footer.news.copy":"We’ll ping you rarely.","footer.news.btn":"Subscribe","footer.copy":"© 2025 TokenVision"
+      },
+      pt:{
+        "meta.title":"TokenVision – Documentação",
+        "nav.features":"Recursos","nav.pricing":"Preços","nav.docs":"Docs","nav.download":"Baixar","nav.buy":"Comprar licença",
+        "title":"Documentação","subtitle":"Instalação, ativação e fluxo (Coletor → Treinador → Previsor).",
+        "toc.title":"Conteúdo","toc.req":"Requisitos","toc.win":"Instalar no Windows","toc.mac":"Instalar no macOS","toc.linux":"Instalar no Linux","toc.license":"Ativar licença","toc.pipeline":"Fluxo de trabalho","toc.config":"Configuração","toc.telegram":"Alertas no Telegram","toc.troubleshooting":"Solução de problemas","toc.faq":"FAQ",
+        "req.title":"Requisitos","req.os":"Windows 10+ (x64). macOS 12+ (Apple/Intel). Linux x64 (glibc recente).","req.hw":"4 GB RAM / 500 MB disco (recomendado: 8 GB RAM).","req.net":"Internet estável para APIs das exchanges.",
+        "win.title":"Instalar no Windows","win.1":"Baixe o instalador em Baixar.","win.2":"Dê duplo clique no .exe e siga os passos.","win.3":"Se o SmartScreen alertar, Mais informações → Executar assim mesmo.","win.4":"Abra o TokenVision no menu iniciar.",
+        "mac.title":"Instalar no macOS","mac.desc":"Instalador .dmg em breve. Enquanto isso:","mac.1":"Baixe o build ou siga o guia manual.","mac.2":"Se o Gatekeeper bloquear, clique direito → Abrir.","mac.3":"Permita acesso à rede quando solicitado.",
+        "linux.title":"Instalar no Linux","linux.desc":"Use AppImage quando disponível ou instalação manual.",
+        "lic.title":"Ativar licença (.jwt)","lic.1":"Após a compra você recebe license.jwt por e-mail.","lic.2":"Abra o app → Licença → Carregar arquivo.","lic.3":"Verifique que o status mostre Licença válida.",
+        "pipe.title":"Fluxo de trabalho",
+        "pipe.collector.title":"1) Coletor","pipe.collector.1":"Busca OHLCV e métricas recentes (VWAP, volume).","pipe.collector.2":"Armazena dados locais para treino/previsão.",
+        "pipe.trainer.title":"2) Treinador (LSTM por token)","pipe.trainer.1":"Treina por símbolo com janelas temporais.","pipe.trainer.2":"Gera checkpoints reutilizáveis.",
+        "pipe.predictor.title":"3) Previsor","pipe.predictor.1":"Calcula probabilidade de entrada (ENTER).","pipe.predictor.2":"Emite BUY/SELL por limites e exporta CSV.",
+        "pipe.tips.title":"Dicas","pipe.tips.1":"Atualize dados com o Coletor antes de prever.","pipe.tips.2":"Re-treine periodicamente se o regime mudar.","pipe.tips.3":"Ajuste limites ao seu risco.",
+        "cfg.title":"Configuração","cfg.where":"Arquivo sugerido: config/config.json","cfg.buy":"buy_threshold: prob. mínima para BUY.","cfg.sell":"sell_threshold: prob. máxima para SELL.","cfg.window":"window: tamanho da janela do modelo.",
+        "tg.title":"Alertas no Telegram (opcional)","tg.1":"Crie um bot no @BotFather e pegue o BOT_TOKEN.","tg.2":"Envie mensagem ao bot e obtenha o chat_id (ex.: @userinfobot).","tg.3":"Ative telegram.enabled=true e preencha credenciais.",
+        "tr.title":"Solução de problemas","tr.a1":"Sem dados: verifique conexão, proxy/VPN e limites de API.","tr.a2":"Licença inválida: confira o .jwt e o relógio do sistema.","tr.a3":"Resultados estranhos: re-treine, amplie dados e ajuste limites.",
+        "faq.title":"FAQ","faq.q1":"Preciso de chaves de exchange?","faq.a1":"Não para gerar sinais. Só se ativar um bot de execução (somente leitura e escopos mínimos).","faq.q2":"Com que frequência re-treinar?","faq.a2":"Depende do ativo e horizonte. Semanal ou após eventos é um bom começo.","faq.q3":"Onde ficam os CSVs?","faq.a3":"Na pasta de trabalho definida pelo app (ex.: ./output/).",
+        "updated":"Última atualização: 2025-09-06",
+        "footer.product":"Produto","footer.legal":"Legal","footer.terms":"Termos","footer.privacy":"Privacidade","footer.thanks":"Obrigado",
+        "footer.tagline":"Sinais cripto com modelos reais.","footer.news.title":"Novidades","footer.news.copy":"Avisamos raramente.","footer.news.btn":"Assinar","footer.copy":"© 2025 TokenVision"
+      }
+    };
+
+    const $$ = (s,r=document)=>Array.from(r.querySelectorAll(s));
+
+    const getLang = ()=>{
+      const qs = new URLSearchParams(location.search).get('lang');
+      const st = localStorage.getItem('lang');
+      const nv = (navigator.language||'es').slice(0,2).toLowerCase();
+      const src = (qs||st||nv);
+      return src.startsWith('pt')?'pt': src.startsWith('en')?'en':'es';
+    };
+
+    const applyI18n = (lang)=>{
+      const d = translations[lang] || translations.es;
+      document.documentElement.setAttribute('lang', lang);
+      if(d["meta.title"]) document.title = d["meta.title"];
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc){
+        metaDesc.setAttribute('content',
+          lang==='en' ? 'Install, activation and workflow guide for TokenVision: Collector, Trainer, Predictor.' :
+          lang==='pt' ? 'Guia de instalação, ativação e uso do TokenVision: Coletor, Treinador, Previsor.' :
+                        'Guía de instalación, activación y uso de TokenVision: Colector, Entrenador y Predictor.'
+        );
+      }
+      $$('[data-i18n]').forEach(el=>{ const k = el.getAttribute('data-i18n'); if (d[k]) el.textContent = d[k]; });
+      localStorage.setItem('lang', lang);
+      const sel=document.getElementById('lang'); if(sel) sel.value=lang;
+    };
+
+    const keepLang = (lang)=>{
+      $$('a[data-keep-lang]').forEach(a=>{
+        const href=a.getAttribute('href')||'';
+        if(!href || /^https?:\/\//i.test(href) || href.startsWith('mailto:')) return;
+        const [base,hash]=href.split('#');
+        const u=new URL(base, location.origin);
+        u.searchParams.set('lang', lang);
+        a.setAttribute('href', (u.pathname.replace(/^\//,'')) + u.search + (hash?('#'+hash):''));
+      });
+    };
+
+    const markActive = ()=>{
+      // marca "Docs" activo
+      const here = (location.pathname.split('/').pop()||'README.html').toLowerCase();
+      $$('.site-links a').forEach(a=>{
+        const base=(a.getAttribute('href')||'').split('?')[0].split('#')[0];
+        const f=(base.split('/').pop()||'').toLowerCase();
+        const active = f ? (f===here) : false;
+        a.classList.toggle('active', active);
+        if (active) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+      });
+      const docs = document.querySelector('.site-links a[data-i18n="nav.docs"]');
+      if (docs){ docs.classList.add('active'); docs.setAttribute('aria-current','page'); }
+    };
+
+    // Newsletter → ../gracias.html?email=&lang=
+    function wireNewsletter(lang){
+      const form = document.getElementById('newsletter-form');
+      if (!form) return;
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const email = (document.getElementById('nl-email')?.value||'').trim();
+        const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        if (!ok){
+          alert(lang==='pt'?'Insira um e-mail válido': lang==='en'?'Enter a valid email':'Ingresá un email válido');
+          return;
+        }
+        const url = new URL('../gracias.html', location.href);
+        url.searchParams.set('email', email);
+        url.searchParams.set('lang', lang);
+        location.href = url.toString();
+      });
+    }
+
+    // init
+    const initial = getLang();
+    applyI18n(initial);
+    keepLang(initial);
+    markActive();
+    wireNewsletter(initial);
+
+    document.getElementById('lang').addEventListener('change', e=>{
+      const lang = e.target.value;
+      applyI18n(lang);
+      keepLang(lang);
+      const url = new URL(location.href); url.searchParams.set('lang', lang);
+      history.replaceState({},'',url);
+      wireNewsletter(lang);
+    });
+  </script>
+</body>
+</html>

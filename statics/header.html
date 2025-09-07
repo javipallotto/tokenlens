@@ -1,0 +1,131 @@
+<!-- header.html -->
+<header class="site-nav">
+  <div class="container nav-wrap">
+    <a class="site-brand" href="index.html" data-keep-lang>
+      <img src="assets/logo.svg" alt="" onerror="this.style.display='none'">
+      <span>TokenLens</span>
+    </a>
+
+    <nav class="site-links">
+      <a href="index.html#features" data-keep-lang data-i18n="nav.features">Características</a>
+      <a href="precios.html" data-keep-lang data-i18n="nav.pricing">Precios</a>
+      <a href="docs/README.html" data-keep-lang data-i18n="nav.docs">Docs</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a class="btn" href="descarga.html" data-keep-lang data-i18n="nav.download">Descargar</a>
+      <a class="btn primary" href="precios.html#buy" data-keep-lang data-i18n="nav.buy">Comprar licencia</a>
+
+      <label for="lang" class="sr-only">Language</label>
+      <div class="lang-wrap">
+        <select id="lang" class="lang-select" aria-label="Language">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+          <option value="pt">Português</option>
+        </select>
+        <span class="chev" aria-hidden>▾</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+/* ===== Cool Header ===== */
+.site-nav{
+  background: rgba(255,255,255,.02);
+  border-bottom: 1px solid #1f2a44;
+}
+.nav-wrap{ display:flex; align-items:center; justify-content:space-between; padding:12px 0; gap:16px; }
+.site-brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); font-weight:700; }
+.site-brand img{ width:24px; height:24px; }
+.site-links{ display:flex; gap:18px; align-items:center; }
+.site-links a{
+  color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:10px;
+  border:1px solid transparent; background:transparent;
+}
+.site-links a:hover{ color:#fff; border-color:#233251; background:#0f131a; }
+.site-links a.active, .site-links a[aria-current="page"]{
+  color:var(--text); border-color:#2a3a5c; background:#0f131a; position:relative;
+}
+.site-links a.active::after{
+  content:""; position:absolute; left:10px; right:10px; bottom:-7px; height:2px;
+  background:linear-gradient(90deg,var(--primary),var(--accent)); border-radius:2px;
+}
+
+.nav-cta{ display:flex; align-items:center; gap:12px; }
+.btn{ display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid #24324d; color:var(--text); text-decoration:none; background:#151922; }
+.btn:hover{ border-color:#2b3a5f; }
+.btn.primary{ background:linear-gradient(135deg,var(--primary),var(--accent)); border:0; color:#061018; font-weight:700; }
+
+.lang-wrap{ position:relative; }
+.lang-select{
+  appearance:none; -webkit-appearance:none; -moz-appearance:none;
+  padding:10px 34px 10px 12px; border-radius:12px;
+  background:#0f131a; color:var(--text); border:1px solid #24324d;
+}
+.lang-select:focus{ outline:2px solid var(--primary); outline-offset:2px; }
+.lang-wrap .chev{
+  position:absolute; right:10px; top:50%; transform:translateY(-50%);
+  pointer-events:none; color:var(--muted); font-size:12px;
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .nav-wrap{ flex-wrap:wrap; }
+  .site-links{ order:3; width:100%; justify-content:center; padding:8px 0; }
+  .nav-cta{ order:2; margin-left:auto; }
+}
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+</style>
+
+<script>
+/* ===== Header logic: idioma, links y activo ===== */
+(function(){
+  if (window.__tlHeaderInited) return; window.__tlHeaderInited = true;
+
+  const $$ = (s, r=document)=>Array.from(r.querySelectorAll(s));
+  const getLang = ()=>{
+    const qs = new URLSearchParams(location.search).get('lang');
+    const st = localStorage.getItem('lang');
+    const nv = (navigator.language||'es').slice(0,2).toLowerCase();
+    const src = (qs||st||nv);
+    return src.startsWith('pt')?'pt': src.startsWith('en')?'en':'es';
+  };
+  const setLangInLinks = (lang)=>{
+    $$('a[data-keep-lang]').forEach(a=>{
+      const href = a.getAttribute('href')||'';
+      if (!href || /^https?:\/\//i.test(href) || href.startsWith('mailto:')) return;
+      const [base, hash] = href.split('#');
+      const u = new URL(base, location.origin);
+      u.searchParams.set('lang', lang);
+      a.setAttribute('href', u.pathname.replace(/^\//,'') + u.search + (hash?('#'+hash):''));
+    });
+  };
+  const markActive = ()=>{
+    const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    $$('.site-links a').forEach(a=>{
+      const base = (a.getAttribute('href')||'').split('?')[0].split('#')[0];
+      const file = (base.split('/').pop()||'').toLowerCase();
+      const isActive = file ? (file===here) : (here==='index.html');
+      a.classList.toggle('active', isActive);
+      if (isActive) a.setAttribute('aria-current','page');
+    });
+  };
+
+  const lang = getLang();
+  const sel = document.getElementById('lang');
+  if (sel) sel.value = lang;
+
+  setLangInLinks(lang);
+  markActive();
+
+  sel && sel.addEventListener('change', e=>{
+    const lang = e.target.value;
+    localStorage.setItem('lang', lang);
+    setLangInLinks(lang);
+    const url = new URL(location.href); url.searchParams.set('lang', lang);
+    history.replaceState({},'',url);
+    document.dispatchEvent(new CustomEvent('langchange',{detail:{lang}}));
+  });
+})();
+</script>

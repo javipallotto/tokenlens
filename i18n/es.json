@@ -1,0 +1,42 @@
+{
+  "app": {
+    "title": "TokenLens GUI"
+  },
+  "tabs": {
+    "dashboard": "Dashboard",
+    "collector": "Colector",
+    "trainer": "Entrenador",
+    "predictor": "Predictor",
+    "tokens": "Tokens",
+    "results": "Resultados",
+    "license": "Licencia"
+  },
+  "common": {
+    "start": "▶ Iniciar",
+    "stop": "■ Detener",
+    "ready": "Listo",
+    "running": "Ejecutando…",
+    "stopping": "Deteniendo…"
+  },
+  "dashboard": {
+    "sysdata": "Datos del sistema",
+    "copy_fp": "Copiar fingerprint",
+    "app_dir": "Carpeta de la app",
+    "data_dir": "Carpeta de datos",
+    "open_data": "Abrir carpeta de datos",
+    "license_state_unknown": "Estado de licencia: (desconocido)",
+    "license_ok": "✅ Estado de licencia: válida",
+    "license_missing": "📄 Estado de licencia: no encontrada / inválida",
+    "license_nolib": "📄 Estado de licencia: licensing.py no encontrado",
+    "license_mismatch": "❌ Estado de licencia: no corresponde a esta máquina"
+  },
+  "predictor": {
+    "token_placeholder": "Token(s) slug (p.ej. BTC_USDT)",
+    "batch_csv": "Batch (CSV)",
+    "once": "Una vez (--once)",
+    "verbose": "Verbose (--verbose)",
+    "interval": "Intervalo (s)",
+    "buy_thr": "Umbral BUY",
+    "sell_thr": "Umbral SELL"
+  }
+}
