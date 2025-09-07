@@ -373,7 +373,6 @@ chmod +x TokenVision_Linux.AppImage
         "toc.title":"Conteúdo","toc.req":"Requisitos","toc.win":"Instalar no Windows","toc.mac":"Instalar no macOS","toc.linux":"Instalar no Linux","toc.license":"Ativar licença","toc.pipeline":"Fluxo de trabalho","toc.config":"Configuração","toc.telegram":"Alertas no Telegram","toc.troubleshooting":"Solução de problemas","toc.faq":"FAQ",
         "req.title":"Requisitos","req.os":"Windows 10+ (x64). macOS 12+ (Apple/Intel). Linux x64 (glibc recente).","req.hw":"4 GB RAM / 500 MB disco (recomendado: 8 GB RAM).","req.net":"Internet estável para APIs das exchanges.",
         "win.title":"Instalar no Windows","win.1":"Baixe o instalador em Baixar.","win.2":"Dê duplo clique no .exe e siga os passos.","win.3":"Se o SmartScreen alertar, Mais informações → Executar assim mesmo.","win.4":"Abra o TokenVision no menu iniciar.",
-        "mac.title":"Instalar no macOS","mac.desc":"Instalador .dmg em breve. Enquanto isso:","mac.1":"Baixe o build ou siga o guia manual.","mac.2":"Se o Gatekeeper bloquear, clique direito → Abrir.","mac.3":"Permita acesso à rede quando solicitado.",
         "linux.title":"Instalar no Linux","linux.desc":"Use AppImage quando disponível ou instalação manual.",
         "lic.title":"Ativar licença (.jwt)","lic.1":"Após a compra você recebe license.jwt por e-mail.","lic.2":"Abra o app → Licença → Carregar arquivo.","lic.3":"Verifique que o status mostre Licença válida.",
         "pipe.title":"Fluxo de trabalho",
@@ -418,14 +417,14 @@ chmod +x TokenVision_Linux.AppImage
       const sel=document.getElementById('lang'); if(sel) sel.value=lang;
     };
 
+    /* FIX: mantener ?lang y normalizar rutas absolutas sin romper relativos en /docs/ */
     const keepLang = (lang)=>{
-      $$('a[data-keep-lang]').forEach(a=>{
-        const href=a.getAttribute('href')||'';
+      document.querySelectorAll('a[data-keep-lang]').forEach(a=>{
+        const href = a.getAttribute('href') || '';
         if(!href || /^https?:\/\//i.test(href) || href.startsWith('mailto:')) return;
-        const [base,hash]=href.split('#');
-        const u=new URL(base, location.origin);
-        u.searchParams.set('lang', lang);
-        a.setAttribute('href', (u.pathname.replace(/^\//,'')) + u.search + (hash?('#'+hash):''));
+        const url = new URL(href, location.href);          // base: página actual
+        url.searchParams.set('lang', lang);                // set ?lang
+        a.setAttribute('href', url.pathname + url.search + url.hash); // ruta absoluta normalizada
       });
     };
 
