@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="es">
 <head>
@@ -7,6 +6,7 @@
   <title data-i18n="meta.title">TokenLens – Precios</title>
   <meta name="description" content="Planes de TokenLens: Trial y Pro. Señales y predicción cripto con modelos propios.">
   <link rel="stylesheet" href="assets/styles.css">
+  <link rel="canonical" href="https://tokenlens.pages.dev/precios.html" />
 
   <!-- Estilos complementarios para header/footer y pricing (idénticos al resto) -->
   <style>
@@ -75,7 +75,7 @@
       </nav>
 
       <div class="nav-cta">
-        <a class="btn" href="descarga.html" data-keep-lang data-i18n="nav.download">Descargar</a>
+        <!-- Usamos #buy aquí; keepLang lo convertirá a la URL actual con ?lang y el hash correcto -->
         <a class="btn primary" href="#buy" data-keep-lang data-i18n="nav.buy">Comprar licencia</a>
 
         <label for="lang" class="sr-only">Language</label>
@@ -372,19 +372,19 @@
       localStorage.setItem('lang', lang);
       const sel = document.getElementById('lang'); if (sel) sel.value = lang;
 
-      // ajustar sufijo /mes /año del precio si se cambió idioma
+      // actualizar sufijo /mes /año según idioma y período
       const per = currentPeriod === 'yearly' ? dict["pricing.per.year"] : dict["pricing.per.month"];
       document.getElementById('price-per').textContent = per || (currentPeriod==='yearly'?'/año':'/mes');
     };
 
+    // ✅ Respetar rutas relativas y hashes (#) desde cualquier página
     const keepLang = (lang)=>{
       $$('a[data-keep-lang]').forEach(a=>{
         const href = a.getAttribute('href')||'';
         if (!href || /^https?:\/\//i.test(href) || href.startsWith('mailto:')) return;
-        const [base, hash] = href.split('#');
-        const u = new URL(base, location.origin);
-        u.searchParams.set('lang', lang);
-        a.setAttribute('href', u.pathname.replace(/^\//,'') + u.search + (hash?('#'+hash):''));
+        const url = new URL(href, location.href); // base: página actual
+        url.searchParams.set('lang', lang);
+        a.setAttribute('href', url.pathname + url.search + (url.hash || ''));
       });
     };
 
@@ -430,15 +430,16 @@
       }
     }
 
-    btnMonthly.addEventListener('click', ()=> setPeriod('monthly'));
-    btnYearly.addEventListener('click', ()=> setPeriod('yearly'));
+    if (btnMonthly) btnMonthly.addEventListener('click', ()=> setPeriod('monthly'));
+    if (btnYearly)  btnYearly .addEventListener('click', ()=> setPeriod('yearly'));
 
-    // ===== Newsletter: redirige a /gracias con ?email=&lang=
-    function wireNewsletter(lang){
+    // ===== Newsletter (no duplica listeners; lee idioma al enviar) =====
+    function wireNewsletter(){
       const form = document.getElementById('newsletter-form');
       if (!form) return;
       form.addEventListener('submit', (e)=>{
         e.preventDefault();
+        const lang = document.documentElement.getAttribute('lang') || getLang();
         const email = (document.getElementById('nl-email')?.value||'').trim();
         const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         if (!ok){
@@ -449,7 +450,7 @@
         url.searchParams.set('email', email);
         url.searchParams.set('lang', lang);
         location.href = url.toString();
-      });
+      }, { once:true }); // evita duplicado si recargás scripts
     }
 
     // init
@@ -458,18 +459,19 @@
     keepLang(initial);
     markActive();
     setPeriod(currentPeriod);
-    wireNewsletter(initial);
+    wireNewsletter();
 
     // idioma
-    document.getElementById('lang').addEventListener('change', e=>{
-      const lang = e.target.value;
-      applyI18n(lang);
-      keepLang(lang);
-      const url = new URL(location.href); url.searchParams.set('lang', lang);
-      history.replaceState({},'',url);
-      wireNewsletter(lang);
-    });
+    const langSel = document.getElementById('lang');
+    if (langSel){
+      langSel.addEventListener('change', e=>{
+        const lang = e.target.value;
+        applyI18n(lang);
+        keepLang(lang);
+        const url = new URL(location.href); url.searchParams.set('lang', lang);
+        history.replaceState({},'',url);
+      });
+    }
   </script>
 </body>
 </html>
-

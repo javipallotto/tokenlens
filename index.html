@@ -319,34 +319,47 @@
       const sel=document.getElementById('lang'); if(sel) sel.value=lang;
     };
 
+    // ✅ Mantiene rutas relativas y hashes desde cualquier página
     const keepLang = (lang)=>{
       $$('a[data-keep-lang]').forEach(a=>{
-        const href=a.getAttribute('href')||'';
-        if (!href || /^https?:\/\//i.test(href) || href.startsWith('mailto:')) return;
-        const [base, hash] = href.split('#');
-        const u = new URL(base, location.origin);
-        u.searchParams.set('lang', lang);
-        a.setAttribute('href', u.pathname.replace(/^\//,'') + u.search + (hash?('#'+hash):''));
+        const href = a.getAttribute('href') || '';
+        if (!href || href.startsWith('#') || /^https?:\/\//i.test(href) || href.startsWith('mailto:')) return;
+        const url = new URL(href, location.href); // base = URL actual
+        url.searchParams.set('lang', lang);
+        a.setAttribute('href', url.pathname.replace(/^\//,'') + url.search + (url.hash || ''));
       });
     };
 
     const markActive = ()=>{
-      const here = (location.pathname.split('/').pop()||'index.html').toLowerCase();
+      const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+      const hash = location.hash || '';
+
       $$('.site-links a').forEach(a=>{
-        const base=(a.getAttribute('href')||'').split('?')[0].split('#')[0];
-        const f=(base.split('/').pop()||'').toLowerCase();
-        const active = f ? (f===here) : (here==='index.html');
-        a.classList.toggle('active',active);
-        if(active) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+        const href = a.getAttribute('href') || '';
+        const url = new URL(href, location.href);
+        const file = (url.pathname.split('/').pop() || 'index.html').toLowerCase();
+        let active = false;
+
+        // Activa "Precios" o "Docs" cuando coincide el archivo
+        if (file !== 'index.html' && file === here) active = true;
+
+        // En home, activa "Características" sólo si estás en #features
+        if (file === 'index.html' && here === 'index.html' && url.hash === '#features' && hash === '#features') {
+          active = true;
+        }
+
+        a.classList.toggle('active', active);
+        if (active) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
       });
     };
 
-    // Newsletter demo: redirige a /gracias con ?email=&lang=
-    const wireNewsletter = (lang)=>{
+    // Newsletter: un solo listener; toma idioma actual al enviar
+    function wireNewsletter(){
       const form = document.getElementById('newsletter-form');
       if (!form) return;
       form.addEventListener('submit', (e)=>{
         e.preventDefault();
+        const lang = document.documentElement.getAttribute('lang') || getLang();
         const email = (document.getElementById('nl-email')?.value||'').trim();
         const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         if (!ok){
@@ -358,13 +371,14 @@
         url.searchParams.set('lang', lang);
         location.href = url.toString();
       });
-    };
+    }
 
+    // init
     const initial=getLang();
     applyI18n(initial);
     keepLang(initial);
     markActive();
-    wireNewsletter(initial);
+    wireNewsletter();
 
     document.getElementById('lang').addEventListener('change', e=>{
       const lang=e.target.value;
@@ -372,7 +386,7 @@
       keepLang(lang);
       const url=new URL(location.href); url.searchParams.set('lang',lang);
       history.replaceState({},'',url);
-      wireNewsletter(lang);
+      markActive(); // por si cambia hash/labels del menú
     });
 
     window.addEventListener('hashchange', markActive);
