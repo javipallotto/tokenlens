@@ -114,6 +114,13 @@
       background-image:url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M21 3L3 11l7 3 3 7 2-6 6-12z' fill='%23cdd7ee'/></svg>\");
     }
 
+    /* ===== Aviso superior + bloqueo navegación mientras se prepara ===== */
+    .notice{
+      background:linear-gradient(90deg, rgba(79,70,229,.15), rgba(14,165,233,.12));
+      border-bottom:1px solid #1f2a44; padding:10px 0; text-align:center;
+    }
+    .site-links a, .nav-cta .btn{ pointer-events:none; opacity:.55; filter:grayscale(35%); }
+
     @media (max-width:900px){
       .nav-wrap{ flex-wrap:wrap; }
       .site-links{ order:3; width:100%; justify-content:center; padding:8px 0; }
@@ -124,6 +131,13 @@
   </style>
 </head>
 <body>
+
+  <!-- AVISO SUPERIOR: en preparación + fecha de preventa -->
+  <div class="notice">
+    <div class="container" data-i18n="pre.banner">
+      En preparación: estamos terminando TokenLens. Preventa: mañana por la noche (9 de septiembre de 2025).
+    </div>
+  </div>
 
   <!-- HEADER -->
   <header class="site-nav">
@@ -160,15 +174,39 @@
   <main class="container" style="padding:24px 0 0">
     <section class="hero">
       <div>
-        <h1 data-i18n="hero.title">Señales cripto con modelos reales, no humo.</h1>
-        <p class="muted" data-i18n="hero.subtitle">
-          TokenLens unifica datos multi-exchange, entrena LSTM por token y te da señales claras con probabilidad de entrada.
+        <span class="badge" style="display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.04em;padding:4px 8px;border-radius:999px;border:1px solid #233251;margin-bottom:8px;background:rgba(35,50,81,.35);color:#cdd7ee" data-i18n="pre.badge">EN PREPARACIÓN</span>
+
+        <h1 data-i18n="pre.heading">TokenLens está en preparación</h1>
+
+        <p class="muted" data-i18n="pre.expl">
+          Estamos afinando la plataforma de señales cripto con modelos propios. Unifica datos multi-exchange, entrena LSTM por token y muestra probabilidad de entrada con reglas BUY/SELL.
         </p>
+
+        <div class="card" style="margin-top:12px">
+          <h3 style="margin-top:0" data-i18n="pre.what_title">¿Qué vas a encontrar?</h3>
+          <ul style="margin:0 0 8px 18px;padding:0">
+            <li data-i18n="pre.what_1">Panel en vivo con probabilidad de entrada por token.</li>
+            <li data-i18n="pre.what_2">BUY/SELL con umbrales configurables y perfiles de riesgo.</li>
+            <li data-i18n="pre.what_3">Señales exportables (CSV) y alertas (p. ej., Telegram).</li>
+            <li data-i18n="pre.what_4">Primero Windows (.exe); luego Android/iOS.</li>
+          </ul>
+          <small class="muted" data-i18n="pre.note">Nota: requiere set inicial de datos y entrenamiento.</small>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <strong data-i18n="pre.sale_window">Preventa: mañana por la noche (9 de septiembre de 2025)</strong>
+          <p class="muted" style="margin:6px 0 0" data-i18n="pre.sale_copy">
+            Abrimos la preventa para los primeros usuarios y activamos descargas/planes desde este sitio.
+          </p>
+        </div>
+
+        <!-- Botones visibles pero desactivados por CSS -->
         <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
           <a class="btn primary" href="descarga.html" data-keep-lang data-i18n="hero.cta_download">Descargar para Windows</a>
           <a class="btn" href="docs/README.html" data-keep-lang data-i18n="hero.cta_docs">Ver documentación</a>
         </div>
       </div>
+
       <div class="card">
         <h3 data-i18n="hero.widget.title">Qué ves en tiempo real</h3>
         <ul style="margin:0 0 8px 18px">
@@ -282,7 +320,21 @@
         "footer.news.title": "Novedades",
         "footer.news.copy": "Te avisamos muy de vez en cuando.",
         "footer.news.btn": "Suscribirme",
-        "footer.copy": "© 2025 TokenLens"
+        "footer.copy": "© 2025 TokenLens",
+
+        /* === PRE-LANZAMIENTO === */
+        "pre.banner": "En preparación: estamos terminando TokenLens. Preventa: mañana por la noche (9 de septiembre de 2025).",
+        "pre.badge": "EN PREPARACIÓN",
+        "pre.heading": "TokenLens está en preparación",
+        "pre.expl": "Estamos afinando la plataforma de señales cripto con modelos propios. Unifica datos multi-exchange, entrena LSTM por token y muestra probabilidad de entrada con reglas BUY/SELL.",
+        "pre.what_title": "¿Qué vas a encontrar?",
+        "pre.what_1": "Panel en vivo con probabilidad de entrada por token.",
+        "pre.what_2": "BUY/SELL con umbrales configurables y perfiles de riesgo.",
+        "pre.what_3": "Señales exportables (CSV) y alertas (p. ej., Telegram).",
+        "pre.what_4": "Primero Windows (.exe); luego Android/iOS.",
+        "pre.note": "Nota: requiere set inicial de datos y entrenamiento.",
+        "pre.sale_window": "Preventa: mañana por la noche (9 de septiembre de 2025)",
+        "pre.sale_copy": "Abrimos la preventa para los primeros usuarios y activamos descargas/planes desde este sitio."
       },
       en: {
         "meta.title": "TokenLens – Crypto signals & forecasting",
@@ -316,7 +368,21 @@
         "footer.news.title": "Newsletter",
         "footer.news.copy": "We’ll ping you rarely.",
         "footer.news.btn": "Subscribe",
-        "footer.copy": "© 2025 TokenLens"
+        "footer.copy": "© 2025 TokenLens",
+
+        /* === PRE-LAUNCH === */
+        "pre.banner": "In preparation: we’re finishing TokenLens. Presale: tomorrow night (September 9, 2025).",
+        "pre.badge": "UNDER CONSTRUCTION",
+        "pre.heading": "TokenLens is in preparation",
+        "pre.expl": "We’re fine-tuning our crypto signals platform with in-house models. It merges multi-exchange data, trains per-token LSTM, and surfaces entry probability with BUY/SELL rules.",
+        "pre.what_title": "What will you get?",
+        "pre.what_1": "Live panel with entry probability per token.",
+        "pre.what_2": "BUY/SELL with configurable thresholds and risk profiles.",
+        "pre.what_3": "Exportable signals (CSV) and alerts (e.g., Telegram).",
+        "pre.what_4": "Windows (.exe) first; Android/iOS next.",
+        "pre.note": "Note: requires an initial data set and training.",
+        "pre.sale_window": "Presale: tomorrow night (September 9, 2025)",
+        "pre.sale_copy": "We’ll open presale for early users and enable downloads/plans here."
       },
       pt: {
         "meta.title": "TokenLens – Sinais e previsão cripto",
@@ -350,7 +416,21 @@
         "footer.news.title": "Novidades",
         "footer.news.copy": "Avisamos raramente.",
         "footer.news.btn": "Assinar",
-        "footer.copy": "© 2025 TokenLens"
+        "footer.copy": "© 2025 TokenLens",
+
+        /* === PRÉ-LANÇAMENTO === */
+        "pre.banner": "Em preparação: estamos finalizando o TokenLens. Pré-venda: amanhã à noite (9 de setembro de 2025).",
+        "pre.badge": "EM PREPARAÇÃO",
+        "pre.heading": "TokenLens está em preparação",
+        "pre.expl": "Estamos ajustando a plataforma de sinais cripto com modelos próprios. Une dados multi-exchange, treina LSTM por token e exibe probabilidade de entrada com regras BUY/SELL.",
+        "pre.what_title": "O que você vai encontrar?",
+        "pre.what_1": "Painel ao vivo com probabilidade de entrada por token.",
+        "pre.what_2": "BUY/SELL com limiares configuráveis e perfis de risco.",
+        "pre.what_3": "Sinais exportáveis (CSV) e alertas (ex.: Telegram).",
+        "pre.what_4": "Primeiro Windows (.exe); depois Android/iOS.",
+        "pre.note": "Obs.: requer conjunto inicial de dados e treinamento.",
+        "pre.sale_window": "Pré-venda: amanhã à noite (9 de setembro de 2025)",
+        "pre.sale_copy": "Abriremos a pré-venda para os primeiros usuários e ativaremos downloads/planos aqui."
       }
     };
 
