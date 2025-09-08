@@ -6,17 +6,61 @@
   <title data-i18n="meta.title">TokenLens – Señales y predicción cripto</title>
   <meta name="description" content="App de señales y predicción cripto con modelos propios. Descargá TokenLens.">
 
-  <!-- SEO -->
+  <!-- Canonical + hreflang -->
   <link rel="canonical" href="https://tokenlens.pages.dev/"/>
   <link rel="alternate" hreflang="es" href="https://tokenlens.pages.dev/?lang=es"/>
   <link rel="alternate" hreflang="en" href="https://tokenlens.pages.dev/?lang=en"/>
   <link rel="alternate" hreflang="pt" href="https://tokenlens.pages.dev/?lang=pt"/>
   <link rel="alternate" hreflang="x-default" href="https://tokenlens.pages.dev/"/>
 
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tokenlens.pages.dev/">
+  <meta property="og:title" content="TokenLens – Señales y predicción cripto">
+  <meta property="og:description" content="App de señales y predicción cripto con modelos propios. Descargá TokenLens.">
+  <meta property="og:image" content="https://tokenlens.pages.dev/assets/og-image.png">
+  <!-- NUEVO -->
+  <meta property="og:image:alt" content="TokenLens: señales cripto con modelos reales. Vista de dashboard con gráficos." />
+  <meta property="og:site_name" content="TokenLens" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TokenLens – Señales y predicción cripto">
+  <meta name="twitter:description" content="App de señales y predicción cripto con modelos propios. Descargá TokenLens.">
+  <meta name="twitter:image" content="https://tokenlens.pages.dev/assets/og-image.png">
+  <!-- NUEVO -->
+  <meta name="twitter:image:alt" content="TokenLens: señales cripto con modelos reales. Vista de dashboard con gráficos." />
+  <meta name="theme-color" content="#0f131a">
+
+  <!-- Icons / PWA -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+
+  <!-- JSON-LD Organization (NUEVO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TokenLens",
+    "url": "https://tokenlens.pages.dev/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tokenlens.pages.dev/assets/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    },
+    "sameAs": [
+      "https://x.com/tucuenta",
+      "https://youtube.com/@tu",
+      "https://t.me/tucanal"
+    ]
+  }
+  </script>
+
   <!-- Estilos globales -->
   <link rel="stylesheet" href="assets/styles.css" />
 
-  <!-- Header/Footer styles -->
+  <!-- Header/Footer styles + social icons -->
   <style>
     /* ===== Header ===== */
     .site-nav{ background:rgba(255,255,255,.02); border-bottom:1px solid #1f2a44; }
@@ -45,6 +89,30 @@
     .hero{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:24px; align-items:center; padding:40px 0 0; }
     .card{ background:#0f131a; border:1px solid #1f2430; border-radius:16px; padding:18px; }
     .features-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+
+    /* ===== Social icons (inline SVG, sin dependencias) ===== */
+    .social{ display:flex; gap:12px; margin-top:8px; }
+    .social a{
+      position:relative; padding-left:28px; color:var(--muted); text-decoration:none;
+    }
+    .social a:hover{ color:#fff; }
+    .social a::before{
+      content:""; position:absolute; left:0; top:50%; transform:translateY(-50%);
+      width:18px; height:18px; background-repeat:no-repeat; background-size:contain; background-position:center;
+      opacity:.9;
+    }
+    /* X (Twitter) */
+    .social a[data-icon="x"]::before{
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M3 3L21 21M21 3L3 21' stroke='%23cdd7ee' stroke-width='2.2' stroke-linecap='round'/></svg>");
+    }
+    /* YouTube */
+    .social a[data-icon='yt']::before{
+      background-image:url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect x='2' y='6' width='20' height='12' rx='3' fill='%23cdd7ee'/><polygon points='10,9 16,12 10,15' fill='%230f131a'/></svg>\");
+    }
+    /* Telegram */
+    .social a[data-icon='tg']::before{
+      background-image:url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M21 3L3 11l7 3 3 7 2-6 6-12z' fill='%23cdd7ee'/></svg>\");
+    }
 
     @media (max-width:900px){
       .nav-wrap{ flex-wrap:wrap; }
@@ -139,9 +207,9 @@
         <p class="muted" data-i18n="footer.tagline">Señales cripto con modelos reales.</p>
 
         <div class="social">
-          <a href="https://x.com/tucuenta"  data-icon="x"  target="_blank" rel="noopener">Twitter</a>
-          <a href="https://youtube.com/@tu"  data-icon="yt" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://t.me/tucanal"     data-icon="tg" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://x.com/tucuenta"        data-icon="x"  target="_blank" rel="noopener">Twitter</a>
+          <a href="https://instagram.com/tucuenta" data-icon="ig" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://t.me/tucanal"           data-icon="tg" target="_blank" rel="noopener">Telegram</a>
         </div>
       </div>
 
@@ -319,12 +387,12 @@
       const sel=document.getElementById('lang'); if(sel) sel.value=lang;
     };
 
-    // ✅ Mantiene rutas relativas y hashes desde cualquier página
+    /* Mantiene rutas relativas y hashes desde cualquier página */
     const keepLang = (lang)=>{
       $$('a[data-keep-lang]').forEach(a=>{
         const href = a.getAttribute('href') || '';
         if (!href || href.startsWith('#') || /^https?:\/\//i.test(href) || href.startsWith('mailto:')) return;
-        const url = new URL(href, location.href); // base = URL actual
+        const url = new URL(href, location.href);
         url.searchParams.set('lang', lang);
         a.setAttribute('href', url.pathname.replace(/^\//,'') + url.search + (url.hash || ''));
       });
@@ -386,7 +454,7 @@
       keepLang(lang);
       const url=new URL(location.href); url.searchParams.set('lang',lang);
       history.replaceState({},'',url);
-      markActive(); // por si cambia hash/labels del menú
+      markActive();
     });
 
     window.addEventListener('hashchange', markActive);

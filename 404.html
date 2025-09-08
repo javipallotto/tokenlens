@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 – Página no encontrada | TokenLens</title>
+  <meta name="description" content="La página que buscás no existe o fue movida.">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <!-- OG/Twitter mínimos -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="404 – TokenLens">
+  <meta property="og:description" content="La página que buscás no existe o fue movida.">
+  <meta property="og:image" content="https://tokenlens.pages.dev/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+</head>
+<body>
+  <header class="site-nav">
+    <div class="container nav-wrap">
+      <a class="site-brand" href="/" data-keep-lang>
+        <img src="/assets/logo.svg" alt="TokenLens" onerror="this.style.display='none'">
+        <span>TokenLens</span>
+      </a>
+      <nav class="site-links">
+        <a href="/index.html#features" data-keep-lang>Características</a>
+        <a href="/precios.html" data-keep-lang>Precios</a>
+        <a href="/docs/README.html" data-keep-lang>Docs</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn" href="/descarga.html" data-keep-lang>Descargar</a>
+        <a class="btn primary" href="/precios.html#buy" data-keep-lang>Comprar licencia</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding:36px 0">
+    <div class="card">
+      <h1>404 – Página no encontrada</h1>
+      <p class="muted">La URL pudo cambiar o estar mal escrita.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+        <a class="btn" href="/" data-keep-lang>Volver al inicio</a>
+        <a class="btn" href="/docs/README.html" data-keep-lang>Ir a la documentación</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container legal-bar">
+      <span class="muted small">© 2025 TokenLens</span>
+      <span class="muted small">v1</span>
+    </div>
+  </footer>
+  <script>
+    // Mantener ?lang en links internos
+    const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+    const getLang=()=>new URLSearchParams(location.search).get('lang');
+    const keepLang=(lang)=>{$$('a[data-keep-lang]').forEach(a=>{
+      const href=a.getAttribute('href')||''; if(!href||/^https?:\/\//i.test(href)||href.startsWith('mailto:'))return;
+      const u=new URL(href,location.href); if(lang) u.searchParams.set('lang',lang);
+      a.setAttribute('href', u.pathname.replace(/^\//,'') + u.search + (u.hash||''));
+    })};
+    keepLang(getLang());
+  </script>
+</body>
+</html>

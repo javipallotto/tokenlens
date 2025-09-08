@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="es">
 <head>
@@ -6,6 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title data-i18n="meta.title">TokenLens – Términos</title>
   <meta name="description" content="Términos de uso y licencia de TokenLens.">
+
+  <!-- Canonical + hreflang -->
+  <link rel="canonical" href="https://tokenlens.pages.dev/terminos.html" />
+  <link rel="alternate" hreflang="es" href="https://tokenlens.pages.dev/terminos.html?lang=es"/>
+  <link rel="alternate" hreflang="en" href="https://tokenlens.pages.dev/terminos.html?lang=en"/>
+  <link rel="alternate" hreflang="pt" href="https://tokenlens.pages.dev/terminos.html?lang=pt"/>
+  <link rel="alternate" hreflang="x-default" href="https://tokenlens.pages.dev/terminos.html"/>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TokenLens">
+  <meta property="og:title" content="TokenLens – Términos">
+  <meta property="og:description" content="Términos de uso y licencia de TokenLens.">
+  <meta property="og:url" content="https://tokenlens.pages.dev/terminos.html">
+  <meta property="og:image" content="https://tokenlens.pages.dev/assets/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TokenLens – Términos">
+  <meta name="twitter:description" content="Términos de uso y licencia de TokenLens.">
+  <meta name="twitter:image" content="https://tokenlens.pages.dev/assets/og.jpg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"TokenLens – Términos",
+    "url":"https://tokenlens.pages.dev/terminos.html",
+    "inLanguage":"es",
+    "description":"Términos de uso y licencia de TokenLens."
+  }
+  </script>
+
   <link rel="stylesheet" href="assets/styles.css" />
 
   <!-- Header/Footer cool (idénticos al resto) -->
@@ -32,7 +63,6 @@
     .lang-wrap .chev{ position:absolute; right:10px; top:50%; transform:translateY(-50%); pointer-events:none; color:var(--muted); font-size:12px; }
     .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
-    /* Contenido */
     .hero{ padding:30px 0 8px; }
     .card{ background:#0f131a; border:1px solid #1f2430; border-radius:16px; padding:18px; }
     .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
@@ -41,7 +71,6 @@
     .section{ margin-top:14px; }
     ol{ margin:0 0 0 18px; }
 
-    /* Footer unificado */
     .site-footer{ border-top:1px solid #1f2a44; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005)); padding:28px 0 16px; margin-top:40px; }
     .footer-grid{ display:grid; gap:18px; grid-template-columns:1.6fr 1fr 1fr 1.4fr; }
     .footer-col h4{ margin:0 0 10px; font-size:14px; letter-spacing:.3px; text-transform:uppercase; color:#cfe0ff; }
@@ -164,7 +193,6 @@
       <p class="muted">
         <span data-i18n="contact.copy">Consultas sobre estos términos:</span>
         <a class="btn" href="mailto:tokenlens@gmail.com?subject=TokenLens%20-%20Soporte&body=Hola%20TokenLens,%0A%0A(Contame%20tu%20problema%20y%20el%20error%20que%20ves)%0A">Email</a>
-
       </p>
       <p class="muted" data-i18n="updated">Última actualización: 2025-09-04</p>
     </section>
@@ -181,9 +209,9 @@
         <p class="muted" data-i18n="footer.tagline">Señales cripto con modelos reales.</p>
 
         <div class="social">
-          <a href="https://x.com/tucuenta"  data-icon="x"  target="_blank" rel="noopener">Twitter</a>
-          <a href="https://youtube.com/@tu"  data-icon="yt" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://t.me/tucanal"     data-icon="tg" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://x.com/tucuenta"        data-icon="x"  target="_blank" rel="noopener">Twitter</a>
+          <a href="https://instagram.com/tucuenta" data-icon="ig" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://t.me/tucanal"           data-icon="tg" target="_blank" rel="noopener">Telegram</a>
         </div>
       </div>
 
@@ -293,10 +321,9 @@
       $$('a[data-keep-lang]').forEach(a=>{
         const href=a.getAttribute('href')||'';
         if(!href || /^https?:\/\//i.test(href) || href.startsWith('mailto:')) return;
-        const [base,hash]=href.split('#');
-        const u=new URL(base,location.origin);
-        u.searchParams.set('lang',lang);
-        a.setAttribute('href', u.pathname.replace(/^\//,'') + u.search + (hash?('#'+hash):''));
+        const url = new URL(href, location.href); // base = URL actual (segura en subcarpetas)
+        url.searchParams.set('lang',lang);
+        a.setAttribute('href', url.pathname + url.search + (url.hash||''));
       });
     };
     const markActive = ()=>{
@@ -310,7 +337,6 @@
       });
     };
 
-    // Newsletter -> gracias.html?email=&lang=
     function wireNewsletter(lang){
       const form = document.getElementById('newsletter-form');
       if (!form) return;
@@ -326,7 +352,7 @@
         url.searchParams.set('email', email);
         url.searchParams.set('lang', lang);
         location.href = url.toString();
-      });
+      }, { once:true });
     }
 
     const initial = getLang();
@@ -346,4 +372,3 @@
   </script>
 </body>
 </html>
-

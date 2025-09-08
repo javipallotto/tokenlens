@@ -13,10 +13,48 @@
   <link rel="alternate" hreflang="pt" href="https://tokenlens.pages.dev/descarga.html?lang=pt"/>
   <link rel="alternate" hreflang="x-default" href="https://tokenlens.pages.dev/descarga.html"/>
 
-  <!-- Base styles -->
+  <!-- Global styles -->
   <link rel="stylesheet" href="assets/styles.css" />
 
-  <!-- Header/Footer cool (mismos que precios.html) -->
+  <!-- Favicon & PWA -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <meta name="theme-color" content="#0f131a">
+
+  <!-- Open Graph / Twitter (estáticos en ES) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Descargar – TokenLens">
+  <meta property="og:description" content="Descargá TokenLens para Windows, macOS y Linux. Requisitos, instalación y soporte.">
+  <meta property="og:url" content="https://tokenlens.pages.dev/descarga.html">
+  <meta property="og:image" content="https://tokenlens.pages.dev/assets/og-image.png">
+  <meta property="og:site_name" content="TokenLens">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Descargar – TokenLens">
+  <meta name="twitter:description" content="Descargá TokenLens para Windows, macOS y Linux. Requisitos, instalación y soporte.">
+  <meta name="twitter:image" content="https://tokenlens.pages.dev/assets/og-image.png">
+
+  <!-- JSON-LD: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"TokenLens",
+    "operatingSystem":"Windows, macOS, Linux",
+    "applicationCategory":"BusinessApplication",
+    "softwareVersion":"1.0",
+    "downloadUrl":"https://tokenlens.pages.dev/downloads/TokenLens_Setup.exe",
+    "offers":{
+      "@type":"Offer",
+      "category":"free",
+      "price":"0",
+      "priceCurrency":"USD"
+    }
+  }
+  </script>
+
+  <!-- Header/Footer styles (como precios.html) -->
   <style>
     .site-nav{ background:rgba(255,255,255,.02); border-bottom:1px solid #1f2a44; }
     .nav-wrap{ display:flex; align-items:center; justify-content:space-between; padding:12px 0; gap:16px; }
@@ -42,13 +80,10 @@
     .lang-wrap .chev{ position:absolute; right:10px; top:50%; transform:translateY(-50%); pointer-events:none; color:var(--muted); font-size:12px; }
     .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
-    /* Ajuste de input newsletter si tu CSS global no lo tiene */
-    .nl-input{
-      width:100%; padding:10px 12px; border-radius:10px; margin-bottom:8px;
-      background:#0f131a; color:var(--text); border:1px solid #1f2a44;
-    }
+    .nl-input{ width:100%; padding:10px 12px; border-radius:10px; margin-bottom:8px; background:#0f131a; color:var(--text); border:1px solid #1f2a44; }
 
     .site-footer{ border-top:1px solid #1f2a44; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005)); padding:28px 0 16px; margin-top:40px; }
+
     @media (max-width:900px){
       .nav-wrap{ flex-wrap:wrap; }
       .site-links{ order:3; width:100%; justify-content:center; padding:8px 0; }
@@ -61,7 +96,7 @@
 </head>
 <body>
 
-  <!-- HEADER (cool) -->
+  <!-- HEADER -->
   <header class="site-nav">
     <div class="container nav-wrap">
       <a class="site-brand" href="index.html" data-keep-lang>
@@ -137,14 +172,14 @@
         <p class="muted" data-i18n="dl.help_desc">Chequeá antivirus, conexión y permisos. Si persiste, escribinos con tu fingerprint y error.</p>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <a class="btn" href="mailto:tokenlens@gmail.com?subject=TokenLens%20-%20Soporte&body=Hola%20TokenLens,%0A%0A(Contame%20tu%20problema%20y%20el%20error%20que%20ves)%0A">Email</a>
-
+          <!-- TODO: reemplazar con tu handle real de Telegram -->
           <a class="btn" href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER (unificado con iconos CSS y newsletter) -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-col">
@@ -155,9 +190,9 @@
         <p class="muted" data-i18n="footer.tagline">Señales cripto con modelos reales.</p>
 
         <div class="social">
-          <a href="https://x.com/tucuenta"  data-icon="x"  target="_blank" rel="noopener">Twitter</a>
-          <a href="https://youtube.com/@tu"  data-icon="yt" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://t.me/tucanal"     data-icon="tg" target="_blank" rel="noopener">Telegram</a>
+           <a href="https://x.com/tucuenta"        data-icon="x"  target="_blank" rel="noopener">Twitter</a>
+           <a href="https://instagram.com/tucuenta" data-icon="ig" target="_blank" rel="noopener">Instagram</a>
+           <a href="https://t.me/tucanal"           data-icon="tg" target="_blank" rel="noopener">Telegram</a>
         </div>
       </div>
 
@@ -240,7 +275,6 @@
     };
 
     const $$ = (s,r=document)=>Array.from(r.querySelectorAll(s));
-
     const getLang = ()=>{
       const qs = new URLSearchParams(location.search).get('lang');
       const st = localStorage.getItem('lang');
@@ -253,7 +287,6 @@
       const d = translations[lang] || translations.es;
       document.documentElement.setAttribute('lang', lang);
       if(d["meta.title"]) document.title = d["meta.title"];
-      // meta description por idioma
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc){
         metaDesc.setAttribute('content',
@@ -267,22 +300,20 @@
       const sel=document.getElementById('lang'); if(sel) sel.value=lang;
     };
 
-    // ✅ Mantiene rutas relativas y hashes desde cualquier página
+    // Mantiene rutas relativas y hashes
     const keepLang = (lang)=>{
       $$('a[data-keep-lang]').forEach(a=>{
         const href = a.getAttribute('href') || '';
         if (!href || /^https?:\/\//i.test(href) || href.startsWith('mailto:')) return;
-        const url = new URL(href, location.href); // base = URL actual
+        const url = new URL(href, location.href);
         url.searchParams.set('lang', lang);
         a.setAttribute('href', url.pathname + url.search + (url.hash || ''));
       });
     };
 
     const markActive = ()=>{
-      // Deja "Descargar" (botón de la derecha) como activo
       const dl = document.querySelector('.nav-cta a[data-i18n="nav.download"]');
       if (dl){ dl.classList.add('active'); dl.setAttribute('aria-current','page'); }
-      // Resalta enlaces de la barra (features/pricing/docs) si estás en esa página
       const here = (location.pathname.split('/').pop()||'descarga.html').toLowerCase();
       $$('.site-links a').forEach(a=>{
         const base=(a.getAttribute('href')||'').split('?')[0].split('#')[0];
@@ -293,7 +324,7 @@
       });
     };
 
-    // Newsletter: una sola vez; lee el idioma en el submit
+    // Newsletter
     function wireNewsletter(){
       const form = document.getElementById('newsletter-form');
       if (!form) return;
@@ -313,7 +344,7 @@
       });
     }
 
-    // ===== Disponibilidad de builds (ajustá cuando subas binarios) =====
+    // Disponibilidad de builds
     const availability = { win: true, mac: false, linux: false };
 
     function applyAvailability(lang){

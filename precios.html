@@ -5,12 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title data-i18n="meta.title">TokenLens – Precios</title>
   <meta name="description" content="Planes de TokenLens: Trial y Pro. Señales y predicción cripto con modelos propios.">
-  <link rel="stylesheet" href="assets/styles.css">
   <link rel="canonical" href="https://tokenlens.pages.dev/precios.html" />
 
-  <!-- Estilos complementarios para header/footer y pricing (idénticos al resto) -->
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tokenlens.pages.dev/precios.html">
+  <meta property="og:title" content="TokenLens – Precios">
+  <meta property="og:description" content="Planes de TokenLens: Trial y Pro. Señales y predicción cripto con modelos propios.">
+  <meta property="og:image" content="https://tokenlens.pages.dev/assets/og-image.png">
+  <!-- NUEVO -->
+  <meta property="og:image:alt" content="TokenLens: planes Trial y Pro. Señales cripto con modelos reales." />
+  <meta property="og:site_name" content="TokenLens" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TokenLens – Precios">
+  <meta name="twitter:description" content="Planes de TokenLens: Trial y Pro. Señales y predicción cripto con modelos propios.">
+  <meta name="twitter:image" content="https://tokenlens.pages.dev/assets/og-image.png">
+  <!-- NUEVO -->
+  <meta name="twitter:image:alt" content="TokenLens: planes Trial y Pro. Señales cripto con modelos reales." />
+  <meta name="theme-color" content="#0f131a">
+
+  <!-- JSON-LD Organization (NUEVO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TokenLens",
+    "url": "https://tokenlens.pages.dev/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tokenlens.pages.dev/assets/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    },
+    "sameAs": [
+      "https://x.com/tucuenta",
+      "https://youtube.com/@tu",
+      "https://t.me/tucanal"
+    ]
+  }
+  </script>
+
+  <!-- Icons / PWA -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- Estilos complementarios -->
   <style>
-    /* ===== Cool Header ===== */
+    /* ===== Header ===== */
     .site-nav{ background:rgba(255,255,255,.02); border-bottom:1px solid #1f2a44; }
     .nav-wrap{ display:flex; align-items:center; justify-content:space-between; padding:12px 0; gap:16px; }
     .site-brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); font-weight:700; }
@@ -49,6 +94,24 @@
     .billing-toggle button.active{ background:#101726; color:#fff; border:1px solid #2a3a5c; }
     .save{ color:#8bd5ff; font-size:12px; margin-left:4px; }
 
+    /* ===== Social icons (inline SVG) ===== */
+    .social{ display:flex; gap:12px; margin-top:8px; }
+    .social a{ position:relative; padding-left:28px; color:var(--muted); text-decoration:none; }
+    .social a:hover{ color:#fff; }
+    .social a::before{
+      content:""; position:absolute; left:0; top:50%; transform:translateY(-50%);
+      width:18px; height:18px; background-repeat:no-repeat; background-size:contain; background-position:center; opacity:.9;
+    }
+    .social a[data-icon="x"]::before{
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M3 3L21 21M21 3L3 21' stroke='%23cdd7ee' stroke-width='2.2' stroke-linecap='round'/></svg>");
+    }
+    .social a[data-icon='yt']::before{
+      background-image:url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect x='2' y='6' width='20' height='12' rx='3' fill='%23cdd7ee'/><polygon points='10,9 16,12 10,15' fill='%230f131a'/></svg>\");
+    }
+    .social a[data-icon='tg']::before{
+      background-image:url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M21 3L3 11l7 3 3 7 2-6 6-12z' fill='%23cdd7ee'/></svg>\");
+    }
+
     /* Responsive */
     @media (max-width:900px){
       .nav-wrap{ flex-wrap:wrap; }
@@ -60,7 +123,7 @@
 </head>
 <body>
 
-  <!-- HEADER (cool) -->
+  <!-- HEADER -->
   <header class="site-nav">
     <div class="container nav-wrap">
       <a class="site-brand" href="index.html" data-keep-lang>
@@ -75,7 +138,6 @@
       </nav>
 
       <div class="nav-cta">
-        <!-- Usamos #buy aquí; keepLang lo convertirá a la URL actual con ?lang y el hash correcto -->
         <a class="btn primary" href="#buy" data-keep-lang data-i18n="nav.buy">Comprar licencia</a>
 
         <label for="lang" class="sr-only">Language</label>
@@ -138,7 +200,7 @@
           <li data-i18n="pricing.pro.bot">Bot de ejecución automática (opcional)</li>
         </ul>
         <div class="cta" style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" id="checkout-btn" href="https://tusitio.com/checkout?plan=pro&period=monthly&price=24" data-i18n="pricing.pro.cta">Comprar licencia</a>
+          <a class="btn primary" id="checkout-btn" href="mailto:tokenlens@gmail.com?subject=Comprar%20TokenLens%20Pro" data-i18n="pricing.pro.cta">Comprar licencia</a>
           <a class="btn" href="docs/README.html" data-keep-lang data-i18n="pricing.pro.details">Ver detalles técnicos</a>
         </div>
         <p class="muted" style="margin-top:8px; font-size:13px">
@@ -171,7 +233,7 @@
     </section>
   </main>
 
-  <!-- FOOTER (unificado con iconos CSS y newsletter) -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-col">
@@ -182,9 +244,9 @@
         <p class="muted" data-i18n="footer.tagline">Señales cripto con modelos reales.</p>
 
         <div class="social">
-          <a href="https://x.com/tucuenta"  data-icon="x"  target="_blank" rel="noopener">Twitter</a>
-          <a href="https://youtube.com/@tu"  data-icon="yt" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://t.me/tucanal"     data-icon="tg" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://x.com/tucuenta"        data-icon="x"  target="_blank" rel="noopener">Twitter</a>
+          <a href="https://instagram.com/tucuenta" data-icon="ig" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://t.me/tucanal"           data-icon="tg" target="_blank" rel="noopener">Telegram</a>
         </div>
       </div>
 
@@ -224,6 +286,10 @@
 
   <!-- i18n + lang persist + active link + billing toggle + newsletter -->
   <script>
+    // ==== Configurá tus URLs reales de checkout (Stripe/Lemon Squeezy) ====
+    const CHECKOUT_MONTHLY_URL = 'TODO_REPLACE_WITH_YOUR_MONTHLY_CHECKOUT_URL';
+    const CHECKOUT_YEARLY_URL  = 'TODO_REPLACE_WITH_YOUR_YEARLY_CHECKOUT_URL';
+
     const translations = {
       es: {
         "meta.title": "TokenLens – Precios",
@@ -234,14 +300,12 @@
         "pricing.trial.title": "Trial", "pricing.trial.desc": "1 token, modo rápido, sin soporte.",
         "pricing.trial.li1": "Colector (quick)", "pricing.trial.li2": "Entrenador y Predictor básicos", "pricing.trial.li3": "Exportación CSV",
         "pricing.trial.cta": "Descargar",
-
         "pricing.badge.early": "Precio lanzamiento",
         "pricing.period.monthly": "Mensual",
         "pricing.period.yearly": "Anual",
         "pricing.save": "Ahorra 31%",
         "pricing.per.month": "/mes",
         "pricing.per.year": "/año",
-
         "pricing.pro.title": "Pro",
         "pricing.pro.desc": "Múltiples tokens, FULL, soporte prioritario.",
         "pricing.pro.f1": "Colector + Entrenador FULL",
@@ -249,10 +313,9 @@
         "pricing.pro.f3": "Soporte prioritario",
         "pricing.pro.bot": "Bot de ejecución automática (opcional)",
         "pricing.pro.cta": "Comprar licencia",
-
+        "pricing.pro.details": "Ver detalles técnicos",
         "pricing.refund.note": "Garantía: reembolso 7 días si no activaste la licencia.",
         "pricing.tax.note": "Impuestos pueden aplicar según tu país.",
-
         "pricing.faq.title": "Preguntas frecuentes",
         "pricing.faq.datasource.q": "¿De dónde recolecta datos TokenLens?",
         "pricing.faq.datasource.a": "Del mercado de exchanges vía APIs públicas (REST/WebSocket). Usamos REST para históricos (OHLCV/metadata) y WebSocket cuando hay streaming en vivo (trades/order book). No requerimos tus claves para generar señales; sólo si activás el bot de ejecución (read-only + permisos mínimos). También podés importar CSV propios.",
@@ -260,7 +323,6 @@
         "pricing.faq.license.a": "Luego del pago te llega un archivo .jwt por email. Lo cargás en “Licencia” dentro de la app.",
         "pricing.faq.device.q": "¿La licencia es por PC?",
         "pricing.faq.device.a": "Sí, es por dispositivo. Si necesitás moverla, escribinos a soporte.",
-
         "footer.product":"Producto","footer.legal":"Legal","footer.terms":"Términos","footer.privacy":"Privacidad","footer.thanks":"Gracias",
         "footer.tagline":"Señales cripto con modelos reales.","footer.news.title":"Novedades","footer.news.copy":"Te avisamos muy de vez en cuando.","footer.news.btn":"Suscribirme","footer.copy":"© 2025 TokenLens"
       },
@@ -273,14 +335,12 @@
         "pricing.trial.title": "Trial", "pricing.trial.desc": "1 token, quick mode, no support.",
         "pricing.trial.li1": "Collector (quick)", "pricing.trial.li2": "Basic Trainer & Predictor", "pricing.trial.li3": "CSV export",
         "pricing.trial.cta": "Download",
-
         "pricing.badge.early": "Early-bird",
         "pricing.period.monthly": "Monthly",
         "pricing.period.yearly": "Yearly",
         "pricing.save": "Save 31%",
         "pricing.per.month": "/mo",
         "pricing.per.year": "/yr",
-
         "pricing.pro.title": "Pro",
         "pricing.pro.desc": "Multiple tokens, FULL mode, priority support.",
         "pricing.pro.f1": "Collector + FULL Trainer",
@@ -288,10 +348,9 @@
         "pricing.pro.f3": "Priority support",
         "pricing.pro.bot": "Automated execution bot (optional)",
         "pricing.pro.cta": "Buy license",
-
+        "pricing.pro.details": "See technical details",
         "pricing.refund.note": "7-day refund if the license wasn’t activated.",
         "pricing.tax.note": "Taxes may apply depending on your country.",
-
         "pricing.faq.title": "FAQ",
         "pricing.faq.datasource.q": "Where does TokenLens get its data from?",
         "pricing.faq.datasource.a": "From exchange markets via public APIs (REST/WebSocket). REST for historicals (OHLCV/metadata) and WebSocket when live streaming is available (trades/order book). No API keys are required for signal generation; only if you enable the execution bot (read-only + minimum scopes). You can also import your own CSVs.",
@@ -299,7 +358,6 @@
         "pricing.faq.license.a": "After purchase you'll receive a .jwt file by email. Load it under “License” in the app.",
         "pricing.faq.device.q": "Is the license per PC?",
         "pricing.faq.device.a": "Yes, it's per device. If you need to move it, contact support.",
-
         "footer.product":"Product","footer.legal":"Legal","footer.terms":"Terms","footer.privacy":"Privacy","footer.thanks":"Thanks",
         "footer.tagline":"Real models. Real crypto signals.","footer.news.title":"Newsletter","footer.news.copy":"We’ll ping you rarely.","footer.news.btn":"Subscribe","footer.copy":"© 2025 TokenLens"
       },
@@ -312,14 +370,12 @@
         "pricing.trial.title": "Trial", "pricing.trial.desc": "1 token, modo rápido, sem suporte.",
         "pricing.trial.li1": "Coletor (quick)", "pricing.trial.li2": "Treinador e Previsor básicos", "pricing.trial.li3": "Exportação CSV",
         "pricing.trial.cta": "Baixar",
-
         "pricing.badge.early": "Preço de lançamento",
         "pricing.period.monthly": "Mensal",
         "pricing.period.yearly": "Anual",
         "pricing.save": "Economize 31%",
         "pricing.per.month": "/mês",
         "pricing.per.year": "/ano",
-
         "pricing.pro.title": "Pro",
         "pricing.pro.desc": "Múltiplos tokens, FULL, suporte prioritário.",
         "pricing.pro.f1": "Coletor + Treinador FULL",
@@ -327,10 +383,9 @@
         "pricing.pro.f3": "Suporte prioritário",
         "pricing.pro.bot": "Bot de execução automática (opcional)",
         "pricing.pro.cta": "Comprar licença",
-
+        "pricing.pro.details": "Ver detalhes técnicos",
         "pricing.refund.note": "Reembolso em 7 dias se a licença não foi ativada.",
         "pricing.tax.note": "Impostos podem se aplicar conforme o país.",
-
         "pricing.faq.title": "Perguntas frequentes",
         "pricing.faq.datasource.q": "De onde o TokenLens obtém os dados?",
         "pricing.faq.datasource.a": "Dos mercados das exchanges via APIs públicas (REST/WebSocket). REST para históricos (OHLCV/metadados) e WebSocket quando há streaming ao vivo (trades/order book). Não exigimos suas chaves para gerar sinais; apenas se você ativar o bot de execução (somente leitura + escopos mínimos). Você também pode importar seus próprios CSVs.",
@@ -338,7 +393,6 @@
         "pricing.faq.license.a": "Após a compra você receberá um arquivo .jwt por e-mail. Carregue em “Licença” no app.",
         "pricing.faq.device.q": "A licença é por PC?",
         "pricing.faq.device.a": "Sim, é por dispositivo. Se precisar mover, fale com o suporte.",
-
         "footer.product":"Produto","footer.legal":"Legal","footer.terms":"Termos","footer.privacy":"Privacidade","footer.thanks":"Obrigado",
         "footer.tagline":"Sinais cripto com modelos reais.","footer.news.title":"Novidades","footer.news.copy":"Avisamos raramente.","footer.news.btn":"Assinar","footer.copy":"© 2025 TokenLens"
       }
@@ -377,12 +431,12 @@
       document.getElementById('price-per').textContent = per || (currentPeriod==='yearly'?'/año':'/mes');
     };
 
-    // ✅ Respetar rutas relativas y hashes (#) desde cualquier página
+    // Mantener ?lang también en rutas relativas y hashes
     const keepLang = (lang)=>{
       $$('a[data-keep-lang]').forEach(a=>{
         const href = a.getAttribute('href')||'';
         if (!href || /^https?:\/\//i.test(href) || href.startsWith('mailto:')) return;
-        const url = new URL(href, location.href); // base: página actual
+        const url = new URL(href, location.href);
         url.searchParams.set('lang', lang);
         a.setAttribute('href', url.pathname + url.search + (url.hash || ''));
       });
@@ -409,6 +463,14 @@
     const btnYearly = document.getElementById('btn-yearly');
     const checkoutBtn = document.getElementById('checkout-btn');
 
+    function checkoutUrlFor(period){
+      const url = (period==='yearly' ? CHECKOUT_YEARLY_URL : CHECKOUT_MONTHLY_URL) || '';
+      const isTodo = /TODO_REPLACE/i.test(url);
+      return isTodo || !/^https?:\/\//i.test(url)
+        ? 'mailto:tokenlens@gmail.com?subject=Comprar%20TokenLens%20Pro%20(' + period + ')'
+        : url;
+    }
+
     function setPeriod(p){
       currentPeriod = p;
       localStorage.setItem('tl_billing', p);
@@ -418,13 +480,13 @@
       if (p === 'yearly'){
         priceAmountEl.textContent = '199';
         pricePerEl.textContent = dict["pricing.per.year"] || '/año';
-        checkoutBtn.setAttribute('href', 'https://tusitio.com/checkout?plan=pro&period=yearly&price=199');
+        checkoutBtn.setAttribute('href', checkoutUrlFor('yearly'));
         btnMonthly.classList.remove('active'); btnMonthly.setAttribute('aria-selected','false');
         btnYearly.classList.add('active'); btnYearly.setAttribute('aria-selected','true');
       } else {
         priceAmountEl.textContent = '24';
         pricePerEl.textContent = dict["pricing.per.month"] || '/mes';
-        checkoutBtn.setAttribute('href', 'https://tusitio.com/checkout?plan=pro&period=monthly&price=24');
+        checkoutBtn.setAttribute('href', checkoutUrlFor('monthly'));
         btnYearly.classList.remove('active'); btnYearly.setAttribute('aria-selected','false');
         btnMonthly.classList.add('active'); btnMonthly.setAttribute('aria-selected','true');
       }
@@ -433,7 +495,7 @@
     if (btnMonthly) btnMonthly.addEventListener('click', ()=> setPeriod('monthly'));
     if (btnYearly)  btnYearly .addEventListener('click', ()=> setPeriod('yearly'));
 
-    // ===== Newsletter (no duplica listeners; lee idioma al enviar) =====
+    // Newsletter (una sola vez)
     function wireNewsletter(){
       const form = document.getElementById('newsletter-form');
       if (!form) return;
@@ -450,7 +512,7 @@
         url.searchParams.set('email', email);
         url.searchParams.set('lang', lang);
         location.href = url.toString();
-      }, { once:true }); // evita duplicado si recargás scripts
+      }, { once:true });
     }
 
     // init

@@ -3,10 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="meta.title">TokenVision – Documentación</title>
-  <meta name="description" content="Guía de instalación, activación y uso de TokenVision: Colector, Entrenador y Predictor.">
+  <title data-i18n="meta.title">TokenLens – Documentación</title>
+  <meta name="description" content="Guía de instalación, activación y uso de TokenLens: Colector, Entrenador y Predictor.">
   <link rel="stylesheet" href="../assets/styles.css" />
   <link rel="canonical" href="https://tokenlens.pages.dev/docs/README.html" />
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="es" href="https://tokenlens.pages.dev/docs/README.html?lang=es"/>
+  <link rel="alternate" hreflang="en" href="https://tokenlens.pages.dev/docs/README.html?lang=en"/>
+  <link rel="alternate" hreflang="pt" href="https://tokenlens.pages.dev/docs/README.html?lang=pt"/>
+  <link rel="alternate" hreflang="x-default" href="https://tokenlens.pages.dev/docs/README.html"/>
+
+  <!-- Favicon / PWA -->
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/favicon.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="../assets/site.webmanifest">
+  <meta name="theme-color" content="#0f131a">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="TokenLens">
+  <meta property="og:title" content="TokenLens – Documentación">
+  <meta property="og:description" content="Guía de instalación, activación y uso de TokenLens: Colector, Entrenador y Predictor.">
+  <meta property="og:url" content="https://tokenlens.pages.dev/docs/README.html">
+  <meta property="og:image" content="https://tokenlens.pages.dev/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TokenLens – Documentación">
+  <meta name="twitter:description" content="Guía de instalación, activación y uso de TokenLens: Colector, Entrenador y Predictor.">
+  <meta name="twitter:image" content="https://tokenlens.pages.dev/assets/og-image.png">
+
+  <!-- JSON-LD: TechArticle -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"TechArticle",
+    "headline":"TokenLens – Documentación",
+    "about":{"@type":"SoftwareApplication","name":"TokenLens"},
+    "inLanguage":"es",
+    "url":"https://tokenlens.pages.dev/docs/README.html",
+    "publisher":{"@type":"Organization","name":"TokenLens"},
+    "image":"https://tokenlens.pages.dev/assets/og-image.png"
+  }
+  </script>
+
   <style>
     /* ===== Header / Nav (igual al resto) ===== */
     .site-nav{ background:rgba(255,255,255,.02); border-bottom:1px solid #1f2a44; }
@@ -71,8 +111,8 @@
   <header class="site-nav">
     <div class="container nav-wrap">
       <a class="site-brand" href="../index.html" data-keep-lang>
-        <img src="../assets/logo.svg" alt="" onerror="this.style.display='none'">
-        <span>TokenVision</span>
+        <img src="../assets/logo.svg" alt="TokenLens" onerror="this.style.display='none'">
+        <span>TokenLens</span>
       </a>
 
       <nav class="site-links">
@@ -141,7 +181,7 @@
         <li data-i18n="win.1">Descargá el instalador desde <a href="../descarga.html" data-keep-lang>Descargar</a>.</li>
         <li data-i18n="win.2">Hacé doble clic en el <span class="kbd">.exe</span> y seguí los pasos.</li>
         <li data-i18n="win.3">Si Windows SmartScreen muestra alerta, clic en <span class="kbd">Más información</span> → <span class="kbd">Ejecutar de todas formas</span>.</li>
-        <li data-i18n="win.4">Abrí TokenVision desde el menú inicio.</li>
+        <li data-i18n="win.4">Abrí TokenLens desde el menú inicio.</li>
       </ol>
     </section>
 
@@ -161,8 +201,8 @@
       <h3 data-i18n="linux.title">Instalación en Linux</h3>
       <p class="muted" data-i18n="linux.desc">Usá AppImage cuando esté disponible o instalación manual.</p>
       <pre><code># Ejemplo AppImage
-chmod +x TokenVision_Linux.AppImage
-./TokenVision_Linux.AppImage
+chmod +x TokenLens_Linux.AppImage
+./TokenLens_Linux.AppImage
 </code></pre>
     </section>
 
@@ -271,15 +311,15 @@ chmod +x TokenVision_Linux.AppImage
     <div class="container footer-grid">
       <div class="footer-col">
         <a class="site-brand" href="../index.html" data-keep-lang>
-          <img src="../assets/logo.svg" alt="" onerror="this.style.display='none'">
-          <span>TokenVision</span>
+          <img src="../assets/logo.svg" alt="TokenLens" onerror="this.style.display='none'">
+          <span>TokenLens</span>
         </a>
         <p class="muted" data-i18n="footer.tagline">Señales cripto con modelos reales.</p>
 
         <div class="social">
-          <a href="https://x.com/tucuenta" data-icon="x" target="_blank" rel="noopener">Twitter</a>
-          <a href="https://youtube.com/@tu" data-icon="yt" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://t.me/tucanal" data-icon="tg" target="_blank" rel="noopener">Telegram</a>
+            <a href="https://x.com/tucuenta"        data-icon="x"  target="_blank" rel="noopener">Twitter</a>
+            <a href="https://instagram.com/tucuenta" data-icon="ig" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://t.me/tucanal"           data-icon="tg" target="_blank" rel="noopener">Telegram</a>
         </div>
       </div>
 
@@ -312,14 +352,131 @@ chmod +x TokenVision_Linux.AppImage
     </div>
 
     <div class="container legal-bar">
-      <span class="muted small" data-i18n="footer.copy">© 2025 TokenVision</span>
+      <span class="muted small" data-i18n="footer.copy">© 2025 TokenLens</span>
       <span class="muted small">v1</span>
     </div>
   </footer>
 
   <!-- i18n + lang persist + active link + newsletter -->
   <script>
-    const translations = {/* (tus traducciones es/en/pt aquí, sin cambios para abreviar) */};
+    const translations = {
+      es: {
+        "meta.title":"TokenLens – Documentación",
+        "nav.features":"Características","nav.pricing":"Precios","nav.docs":"Docs","nav.download":"Descargar","nav.buy":"Comprar licencia",
+
+        "title":"Documentación",
+        "subtitle":"Instalación, activación y flujo de trabajo (Colector → Entrenador → Predictor).",
+
+        "toc.title":"Contenido","toc.req":"Requisitos","toc.win":"Instalación en Windows","toc.mac":"Instalación en macOS","toc.linux":"Instalación en Linux","toc.license":"Activar licencia","toc.pipeline":"Pipeline de trabajo","toc.config":"Configuración","toc.telegram":"Alertas por Telegram","toc.troubleshooting":"Solución de problemas","toc.faq":"FAQ",
+
+        "req.title":"Requisitos","req.os":"Windows 10+ (x64). macOS 12+ (Apple/Intel). Linux x64 (glibc reciente).","req.hw":"4 GB RAM / 500 MB de disco (recomendado: 8 GB RAM).","req.net":"Conexión estable a Internet para APIs de exchanges.",
+
+        "win.title":"Instalación en Windows","win.1":"Descargá el instalador desde Descargar.","win.2":"Hacé doble clic en el .exe y seguí los pasos.","win.3":"Si Windows SmartScreen muestra alerta, clic en Más información → Ejecutar de todas formas.","win.4":"Abrí TokenLens desde el menú inicio.",
+
+        "mac.title":"Instalación en macOS","mac.desc":"Instalador .dmg próximamente. Mientras tanto, seguí estos pasos:","mac.1":"Descargá el build o seguí la guía de instalación manual.","mac.2":"Si Gatekeeper bloquea la app, abrí con clic derecho → Abrir.","mac.3":"Permití el acceso de red cuando se solicite.",
+
+        "linux.title":"Instalación en Linux","linux.desc":"Usá AppImage cuando esté disponible o instalación manual.",
+
+        "lic.title":"Activar licencia (.jwt)","lic.1":"Tras la compra, recibís por email tu archivo license.jwt.","lic.2":"Abrí la app → menú Licencia → Cargar archivo.","lic.3":"Verificá que el estado muestre Licencia válida.",
+
+        "pipe.title":"Pipeline de trabajo",
+        "pipe.collector.title":"1) Colector","pipe.collector.1":"Obtiene OHLCV y métricas recientes (VWAP, volumen).","pipe.collector.2":"Guarda datos locales para entrenamiento/predicción.",
+        "pipe.trainer.title":"2) Entrenador (LSTM por token)","pipe.trainer.1":"Entrena modelos por símbolo con ventanas temporales.","pipe.trainer.2":"Genera checkpoints reutilizables.",
+        "pipe.predictor.title":"3) Predictor","pipe.predictor.1":"Calcula probabilidad de entrada (ENTER).","pipe.predictor.2":"Emite BUY/SELL según umbrales y exporta CSV.",
+        "pipe.tips.title":"Tips","pipe.tips.1":"Actualizar datos con Colector antes de predecir.","pipe.tips.2":"Reentrenar periódicamente si cambian las condiciones.","pipe.tips.3":"Ajustar umbrales para tu perfil de riesgo.",
+
+        "cfg.title":"Configuración","cfg.where":"Archivo sugerido: config/config.json","cfg.buy":"buy_threshold: prob. mínima para BUY.","cfg.sell":"sell_threshold: prob. máxima para SELL.","cfg.window":"window: tamaño de ventana para el modelo.",
+
+        "tg.title":"Alertas por Telegram (opcional)","tg.1":"Creá un bot con @BotFather y obtené el BOT_TOKEN.","tg.2":"Enviá un mensaje al bot para iniciar chat y obtené tu chat_id (p. ej. con @userinfobot).","tg.3":"Activá en la config telegram.enabled=true y completá credenciales.",
+
+        "tr.title":"Solución de problemas","tr.a1":"No descarga datos: verificá conexión, proxy/VPN y límites de API.","tr.a2":"Licencia inválida: revisá el archivo .jwt y el reloj del sistema.","tr.a3":"Resultados raros: reentrená, ampliá datos y ajustá umbrales.",
+
+        "faq.title":"FAQ","faq.q1":"¿Necesito claves de exchange?","faq.a1":"No para generar señales. Sólo si activás un bot de ejecución (read-only y mínimos permisos).","faq.q2":"¿Cada cuánto reentreno?","faq.a2":"Depende del token y tu horizonte. Semanal o por evento de mercado es un buen punto de partida.","faq.q3":"¿Dónde se guardan los CSV?","faq.a3":"En la carpeta de trabajo definida por la app (p. ej. ./output/).",
+
+        "updated":"Última actualización: 2025-09-06",
+
+        "footer.product":"Producto","footer.legal":"Legal","footer.terms":"Términos","footer.privacy":"Privacidad","footer.thanks":"Gracias",
+        "footer.tagline":"Señales cripto con modelos reales.","footer.news.title":"Novedades","footer.news.copy":"Te avisamos muy de vez en cuando.","footer.news.btn":"Suscribirme","footer.copy":"© 2025 TokenLens"
+      },
+
+      en: {
+        "meta.title":"TokenLens – Documentation",
+        "nav.features":"Features","nav.pricing":"Pricing","nav.docs":"Docs","nav.download":"Download","nav.buy":"Buy license",
+
+        "title":"Documentation",
+        "subtitle":"Installation, activation and workflow (Collector → Trainer → Predictor).",
+
+        "toc.title":"Contents","toc.req":"Requirements","toc.win":"Install on Windows","toc.mac":"Install on macOS","toc.linux":"Install on Linux","toc.license":"Activate license","toc.pipeline":"Workflow pipeline","toc.config":"Configuration","toc.telegram":"Telegram alerts","toc.troubleshooting":"Troubleshooting","toc.faq":"FAQ",
+
+        "req.title":"Requirements","req.os":"Windows 10+ (x64). macOS 12+ (Apple/Intel). Linux x64 (recent glibc).","req.hw":"4 GB RAM / 500 MB disk (recommended: 8 GB RAM).","req.net":"Stable Internet connection for exchange APIs.",
+
+        "win.title":"Install on Windows","win.1":"Download the installer from Download.","win.2":"Double-click the .exe and follow the steps.","win.3":"If SmartScreen warns, click More info → Run anyway.","win.4":"Open TokenLens from Start menu.",
+
+        "mac.title":"Install on macOS","mac.desc":".dmg installer coming soon. Meanwhile, follow these steps:","mac.1":"Download the build or follow the manual install guide.","mac.2":"If Gatekeeper blocks it, right-click → Open.","mac.3":"Allow network access when prompted.",
+
+        "linux.title":"Install on Linux","linux.desc":"Use AppImage when available or manual install.",
+
+        "lic.title":"Activate license (.jwt)","lic.1":"After purchase you'll receive license.jwt by email.","lic.2":"Open the app → menu License → Load file.","lic.3":"Check status shows License valid.",
+
+        "pipe.title":"Workflow pipeline",
+        "pipe.collector.title":"1) Collector","pipe.collector.1":"Fetches OHLCV and recent metrics (VWAP, volume).","pipe.collector.2":"Stores local data for training/prediction.",
+        "pipe.trainer.title":"2) Trainer (per-token LSTM)","pipe.trainer.1":"Trains per symbol with time windows.","pipe.trainer.2":"Produces reusable checkpoints.",
+        "pipe.predictor.title":"3) Predictor","pipe.predictor.1":"Computes entry probability (ENTER).","pipe.predictor.2":"Outputs BUY/SELL by thresholds and exports CSV.",
+        "pipe.tips.title":"Tips","pipe.tips.1":"Update data with Collector before predicting.","pipe.tips.2":"Retrain periodically if conditions change.","pipe.tips.3":"Tune thresholds to your risk profile.",
+
+        "cfg.title":"Configuration","cfg.where":"Suggested file: config/config.json","cfg.buy":"buy_threshold: minimum probability for BUY.","cfg.sell":"sell_threshold: maximum probability for SELL.","cfg.window":"window: model window size.",
+
+        "tg.title":"Telegram alerts (optional)","tg.1":"Create a bot with @BotFather and get BOT_TOKEN.","tg.2":"Send a message to the bot to start chat and get your chat_id (e.g. with @userinfobot).","tg.3":"Enable telegram.enabled=true and fill credentials.",
+
+        "tr.title":"Troubleshooting","tr.a1":"No data download: check connection, proxy/VPN and API limits.","tr.a2":"Invalid license: check .jwt file and system clock.","tr.a3":"Weird results: retrain, expand data, and tune thresholds.",
+
+        "faq.title":"FAQ","faq.q1":"Do I need exchange API keys?","faq.a1":"Not for signal generation. Only if you enable an execution bot (read-only with minimal scopes).","faq.q2":"How often should I retrain?","faq.a2":"Depends on the token and horizon. Weekly or around market events is a good start.","faq.q3":"Where are CSVs saved?","faq.a3":"In the app’s working folder (e.g. ./output/).",
+
+        "updated":"Last updated: 2025-09-06",
+
+        "footer.product":"Product","footer.legal":"Legal","footer.terms":"Terms","footer.privacy":"Privacy","footer.thanks":"Thanks",
+        "footer.tagline":"Real models. Real crypto signals.","footer.news.title":"Newsletter","footer.news.copy":"We’ll ping you rarely.","footer.news.btn":"Subscribe","footer.copy":"© 2025 TokenLens"
+      },
+
+      pt: {
+        "meta.title":"TokenLens – Documentação",
+        "nav.features":"Recursos","nav.pricing":"Preços","nav.docs":"Docs","nav.download":"Baixar","nav.buy":"Comprar licença",
+
+        "title":"Documentação",
+        "subtitle":"Instalação, ativação e fluxo de trabalho (Coletor → Treinador → Previsor).",
+
+        "toc.title":"Conteúdo","toc.req":"Requisitos","toc.win":"Instalação no Windows","toc.mac":"Instalação no macOS","toc.linux":"Instalação no Linux","toc.license":"Ativar licença","toc.pipeline":"Pipeline de trabalho","toc.config":"Configuração","toc.telegram":"Alertas no Telegram","toc.troubleshooting":"Solução de problemas","toc.faq":"FAQ",
+
+        "req.title":"Requisitos","req.os":"Windows 10+ (x64). macOS 12+ (Apple/Intel). Linux x64 (glibc recente).","req.hw":"4 GB RAM / 500 MB de disco (recomendado: 8 GB RAM).","req.net":"Conexão estável à Internet para APIs das exchanges.",
+
+        "win.title":"Instalação no Windows","win.1":"Baixe o instalador em Baixar.","win.2":"Clique duas vezes no .exe e siga os passos.","win.3":"Se o SmartScreen alertar, clique em Mais informações → Executar assim mesmo.","win.4":"Abra o TokenLens no menu Iniciar.",
+
+        "mac.title":"Instalação no macOS","mac.desc":"Instalador .dmg em breve. Enquanto isso, siga estes passos:","mac.1":"Baixe o build ou siga o guia de instalação manual.","mac.2":"Se o Gatekeeper bloquear, clique direito → Abrir.","mac.3":"Permita o acesso à rede quando solicitado.",
+
+        "linux.title":"Instalação no Linux","linux.desc":"Use AppImage quando disponível ou instalação manual.",
+
+        "lic.title":"Ativar licença (.jwt)","lic.1":"Após a compra você receberá license.jwt por e-mail.","lic.2":"Abra o app → menu Licença → Carregar arquivo.","lic.3":"Verifique se o status mostra Licença válida.",
+
+        "pipe.title":"Pipeline de trabalho",
+        "pipe.collector.title":"1) Coletor","pipe.collector.1":"Obtém OHLCV e métricas recentes (VWAP, volume).","pipe.collector.2":"Salva dados locais para treino/previsão.",
+        "pipe.trainer.title":"2) Treinador (LSTM por token)","pipe.trainer.1":"Treina por símbolo com janelas temporais.","pipe.trainer.2":"Gera checkpoints reutilizáveis.",
+        "pipe.predictor.title":"3) Previsor","pipe.predictor.1":"Calcula probabilidade de entrada (ENTER).","pipe.predictor.2":"Emite BUY/SELL por limiares e exporta CSV.",
+        "pipe.tips.title":"Dicas","pipe.tips.1":"Atualize dados com o Coletor antes de prever.","pipe.tips.2":"Retreine periodicamente se as condições mudarem.","pipe.tips.3":"Ajuste limiares ao seu perfil de risco.",
+
+        "cfg.title":"Configuração","cfg.where":"Arquivo sugerido: config/config.json","cfg.buy":"buy_threshold: probabilidade mínima para BUY.","cfg.sell":"sell_threshold: probabilidade máxima para SELL.","cfg.window":"window: tamanho da janela do modelo.",
+
+        "tg.title":"Alertas no Telegram (opcional)","tg.1":"Crie um bot com @BotFather e obtenha o BOT_TOKEN.","tg.2":"Envie uma mensagem ao bot para iniciar o chat e obter seu chat_id (ex.: @userinfobot).","tg.3":"Ative telegram.enabled=true e preencha credenciais.",
+
+        "tr.title":"Solução de problemas","tr.a1":"Sem download de dados: verifique conexão, proxy/VPN e limites de API.","tr.a2":"Licença inválida: confira o arquivo .jwt e o relógio do sistema.","tr.a3":"Resultados estranhos: retreine, amplie dados e ajuste limiares.",
+
+        "faq.title":"FAQ","faq.q1":"Preciso de chaves de exchange?","faq.a1":"Não para gerar sinais. Só se você ativar um bot de execução (somente leitura com escopos mínimos).","faq.q2":"Com que frequência retreinar?","faq.a2":"Depende do token e do horizonte. Semanal ou em eventos de mercado é um bom começo.","faq.q3":"Onde os CSVs ficam salvos?","faq.a3":"Na pasta de trabalho do app (ex.: ./output/).",
+
+        "updated":"Última atualização: 2025-09-06",
+
+        "footer.product":"Produto","footer.legal":"Legal","footer.terms":"Termos","footer.privacy":"Privacidade","footer.thanks":"Obrigado",
+        "footer.tagline":"Sinais cripto com modelos reais.","footer.news.title":"Novidades","footer.news.copy":"Avisamos raramente.","footer.news.btn":"Assinar","footer.copy":"© 2025 TokenLens"
+      }
+    };
 
     const $$ = (s,r=document)=>Array.from(r.querySelectorAll(s));
 
@@ -338,9 +495,9 @@ chmod +x TokenVision_Linux.AppImage
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc){
         metaDesc.setAttribute('content',
-          lang==='en' ? 'Install, activation and workflow guide for TokenVision: Collector, Trainer, Predictor.' :
-          lang==='pt' ? 'Guia de instalação, ativação e uso do TokenVision: Coletor, Treinador, Previsor.' :
-                        'Guía de instalación, activación y uso de TokenVision: Colector, Entrenador y Predictor.'
+          lang==='en' ? 'Installation, activation and usage guide for TokenLens: Collector, Trainer, Predictor.' :
+          lang==='pt' ? 'Guia de instalação, ativação e uso do TokenLens: Coletor, Treinador, Previsor.' :
+                        'Guía de instalación, activación y uso de TokenLens: Colector, Entrenador y Predictor.'
         );
       }
       $$('[data-i18n]').forEach(el=>{ const k = el.getAttribute('data-i18n'); if (d[k]) el.textContent = d[k]; });
@@ -348,23 +505,22 @@ chmod +x TokenVision_Linux.AppImage
       const sel=document.getElementById('lang'); if(sel) sel.value=lang;
     };
 
-    // ✅ Versión estable: respeta rutas relativas (funciona bien dentro de /docs/)
+    // ✅ Respeta rutas relativas (funciona bien dentro de /docs/)
     const keepLang = (lang)=>{
       $$('a[data-keep-lang]').forEach(a=>{
         const href = a.getAttribute('href') || '';
         if (!href || /^https?:\/\//i.test(href) || href.startsWith('mailto:')) return;
-        const url = new URL(href, location.href); // base = página actual (no rompe subcarpetas)
+        const url = new URL(href, location.href);
         url.searchParams.set('lang', lang);
         a.setAttribute('href', url.pathname + url.search + (url.hash||''));
       });
     };
 
     const markActive = ()=>{
-      // Marca "Docs" como activo si estamos en /docs/
       const inDocs = /\/docs\//.test(location.pathname);
       $$('.site-links a').forEach(a=>{
-        const text = a.getAttribute('data-i18n') || '';
-        const isDocs = text === 'nav.docs';
+        const key = a.getAttribute('data-i18n') || '';
+        const isDocs = key === 'nav.docs';
         a.classList.toggle('active', isDocs && inDocs);
         if (isDocs && inDocs) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
       });
